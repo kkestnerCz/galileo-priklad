@@ -1,0 +1,1259 @@
+@import url(jquery.datepick.css);
+.rezervace_wizard,
+.rezervace_detail,
+.rezervace_detail_error,
+.rez_kalendar_skin {
+	padding: 1em 15px;
+}
+
+/* REZERVACE */
+.rez_system fieldset{
+	padding: 10px;
+}
+.rezervace_wizard ul{
+	padding: 5px 0;
+}
+.rezervace_wizard ul li{
+	list-style-type: none;
+	font-size: 18px;
+	padding: 5px 5px 15px 5px;
+}
+.rezervace_wizard ul.kalendare_list li.sluzba{
+	clear:both;
+}
+.rezervace_wizard ul li.kalendar{
+	display:inline-block;
+	margin:0 5px 5px 0;
+	width:48%;
+	padding:3%;
+	background:#f0f0f0;
+	border:2px solid #dee2e4;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	vertical-align: top;
+}
+.rezervace_wizard ul li.kalendar:hover{
+	background:#dee2e4;
+	border-color:#a5a7a8;
+	cursor: pointer;
+}
+
+.rezervace_wizard ul li.kalendar a{
+	display:inline;
+	font-size:100%;
+	font-weight: bold;
+	text-decoration: none;
+}
+.rezervace_wizard ul li.kalendar .adresa{
+	color:black;
+	display:block;
+	/*font-size:12px; */
+	font-weight:normal;
+	margin-top:10px;
+}
+.rezervace_wizard ul li.kalendar .adresa span,
+.rezervace_wizard ul li.kalendar .termin span{
+	font-weight:bold;
+}
+.rezervace_wizard ul li.kalendar .popis{
+	color:black;
+	display:block;
+	font-size:12px;
+	font-weight:normal;
+	font-style: italic;
+	margin-top:0px;
+}
+.rezervace_wizard ul li.kalendar.akce{
+	width:auto;
+	display: block;
+	background: lavender;
+	border:2px solid #dee2e4;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:4%;
+}
+.rezervace_wizard ul li.kalendar.akce a{
+	color: steelblue;
+}
+.rezervace_wizard ul li.kalendar.akce .detail_link a
+{
+	font-weight: bold;
+	/*font-size: 12px;*/
+	display: inline;
+}
+.rezervace_wizard ul li.kalendar.akce .detail_link a:hover
+{
+	color: dodgerblue ;
+}
+.rezervace_wizard ul li.kalendar.akce:hover{
+	background:lightsteelblue;
+	border-color: steelblue;
+}
+.rezervace_wizard ul li.kalendar.akce .termin
+{
+	color:black;
+	display:block;
+	font-size:12px;
+	font-weight:normal;
+	margin-top:10px;
+}
+.rezervace_wizard ul li.kalendar.akce .bar
+{
+	display: block;
+	text-align: center;
+	height: 17px;
+	margin: 10px 0 0 0;
+}
+.rezervace_wizard ul li.kalendar.akce .bar_bck
+{
+	height: 15px;
+	background-color: lightsteelblue;
+	border: 1px solid steelblue;
+	display: block;
+	position: relative;
+	margin: 0px auto;
+}
+.rezervace_wizard ul li.kalendar.akce .bar_front
+{
+	display: block;
+	height: 15px;
+	background-color: steelblue;
+}
+.rezervace_wizard ul li.kalendar.akce .free_pos
+{
+	position: absolute;
+	left: auto;
+	top: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	display: block;
+}
+
+.rezervace_wizard ul li.kalendar.akce .termin
+{
+	font-weight: normal;
+}
+
+.rezervace_wizard ul li ul li{
+	font-size:70%;
+	padding: 5px;
+}
+/* navigace */
+.wizard_navigace{
+/*margin:0 auto; */
+}
+.wizard_navigace ul{
+	height:54px;
+	padding:0;
+}
+.wizard_navigace ul li{
+	width:33%;
+	float:left;
+	height:auto;
+	padding:0 2%;
+	background: #DEE2E4;
+	color:#393730;
+	position:relative;
+	z-index:10;
+	margin-right: 0.5%;
+}
+.wizard_navigace ul li.last {
+	margin-right: 0;
+}
+.wizard_navigace ul li.wizard_act_step{
+	background:#00772F;
+}
+.wizard_navigace a, .wizard_navigace b{
+	display:block;
+	text-decoration:none;
+	color:#393730;
+}
+.wizard_navigace b{
+	font-weight:normal;
+	padding:8px 0;
+}
+.wizard_navigace span{
+	font-size:100%;
+}
+.wizard_navigace a.wizard_act_step,
+.wizard_navigace a.wizard_act_step b{
+	color:#fff;
+	font-weight: bold;
+}
+
+.rezervace_tbl th{
+	vertical-align: bottom;
+}
+.rezervace_tbl .odd_rez_group
+{
+	background-color: white;
+}
+.rezervace_tbl .even_rez_group
+{
+	background-color: #d7d7ff;
+}
+
+.rezervace_tbl .sort_buts a
+{
+	padding: 0px;
+	margin: 0px;
+}
+.rezervace_tbl .sort_buts a img
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+.rezervace p.rez_error,.rezervace_detail p.rez_error{
+	padding: 5px 0px;
+	margin: 10px 0px;
+	color: firebrick;
+}
+/* navigace info */
+.rezervace_sys_inf,
+.rezervace_step_inf{
+	/*width:480px;*/
+	margin:10px 0px;
+	clear:both;
+}
+.rezervace_sys_inf {
+	clear: both;
+}
+.rezervace_sys_inf p,
+.rezervace_step_inf p{
+	padding:5px 0;
+	font-size:90%;
+}
+/* krok 1 */
+/* vyhledani rezervace */
+.rezervace_search{
+	padding: 10px;
+/*	background:#dee2e4; */
+	clear:both;
+}
+.rezervace_search .rzs_left{
+	width:45%;
+	padding-right:2%;
+	float:left;
+}
+.rezervace_search .rzs_left table{
+	border:0;
+	background:none;
+}
+.rezervace_search .rzs_left table td{
+	border:0;
+}
+.rezervace_search .rzs_right{
+	float:right;
+	width:49%;
+	border-left:1px solid #a5a7a8;
+	padding-left:3%;
+	min-height:70px;
+}
+.rezervace_search h3{
+	font-size: 18px;
+	font-weight: normal;
+	font-family:Verdana, Arial, sans-serif;
+	color: #393730;
+	padding: 0px 0px 10px 0px;
+}
+.rezervace_search label{
+	font-weight: bold;
+	vertical-align:middle;
+	float:none !important;
+	width:auto !important;
+	cursor:pointer;
+}
+.rezervace_search .rzs_left span{
+	padding-top:5px;
+	display:block;
+}
+.rezervace_search .rzs_right p{
+	padding-bottom:5px;
+	line-height:150%;
+	font-size:90%;
+}
+.rezervace_search input{
+	border:0 !important;
+	width:103px;
+	height:26px;
+	background:url(images/rezervace_inp.png) no-repeat left;
+	line-height:26px;
+	vertical-align:middle;
+}
+.rezervace_search input.adm_btn{
+	font-size: 0;
+	color:transparent;
+	width:44px;
+	background:url(images/rezervace_btn.png);
+	cursor:pointer;
+	line-height:1px;
+}
+
+/* krok 2 */
+.rez_dat_box{
+	/*padding:10px;
+	border:1px solid #a5a7a8;
+	background:#dee2e4; */
+	order:2;
+	margin: 20px auto;
+}
+div.rezervace_datum{
+/*	min-width:49%;
+	float: left; */
+}
+div.kal_legenda{
+	/*float: right;
+	width: 40%;
+	overflow: visible; */
+}
+div.kal_legenda .kal_legenda_title{
+	font-weight: bold;
+	color: #393730;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+div.kal_legenda div
+{
+	margin-top: 10px;
+}
+div.kal_legenda div p
+{
+	margin: 0px 0px 10px 5px;
+	line-height: 18px;
+	vertical-align: bottom;
+}
+div.kal_legenda span.enable{
+	font-size: 11px;
+	width: 18px;
+	height: 18px;
+	background-color: #f6f5f3;
+	color: black;
+	font-weight: normal;
+	border: 1px solid #00772F;
+	color:#1d1d1d;
+	padding: 2px 4px;
+	margin-right: 5px;
+	border-radius:1px;
+}
+div.kal_legenda span.disable{
+	font-size: 11px;
+	width: 18px;
+	height: 18px;
+	background-color: #dee2e4;
+	color: #908c7f;
+	font-weight: normal;
+	border: 1px solid #f0efeb;
+	padding: 2px 4px;
+	margin-right: 5px;
+	border-radius:1px;
+}
+div.kal_legenda span.select{
+	font-size: 11px;
+	width: 18px;
+	height: 18px;
+	background-color: #00772F;
+	color: white;
+	border-radius:1px;
+	font-weight: bold;
+	padding: 2px 4px;
+	margin-right: 5px;
+}
+div.kal_legenda span.disable.othermonth{
+	background-color: white;
+	border-color:transparent;
+}
+div.kal_legenda span.disable.othermonth-weekend
+{
+	background-color: #DDD;
+}
+div.kal_legenda .kal_legenda_row{
+	vertical-align: text-top;
+}
+.rezervace_termin{
+	margin-top:10px;
+
+}
+.rezervace_termin b.vyber_cas{
+	font-weight:normal;
+	margin-bottom:15px;
+	display:none;
+	
+}
+.tbl_rezervace_termin tr{
+	font-weight: bold;
+	border: 1px solid #a5a7a8;
+}
+.tbl_rezervace_termin th{
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #dee2e4;
+	padding: 5px;
+}
+.tbl_rezervace_termin td{
+	/*/*font-size: 12px;*/ */
+	font-weight: normal;
+	padding: 5px 10px;
+}
+.rez_link.free_termin{
+	cursor: pointer;
+}
+.rez_link.free_termin a{
+	margin-left:20px;
+}
+.rez_link.free_termin:hover
+{
+	background-color: antiquewhite;
+	cursor: pointer;
+}
+.rez_link.full_termin
+{
+	background-color: lightgray;
+	color: gray;
+}
+.tbl_rezervace_termin{
+	border: 1px solid #a5a7a8;
+	border-collapse: collapse;
+	width:100%;
+}
+.bar_bck{
+	height: 10px;
+	background-color: #a5a7a8;
+	float:left;
+	margin:2px 10px 0 0;
+}
+.bar_front{
+	height: 10px;
+	background-color: #373636;
+}
+/* krok 3 */
+.rezervace_sum span.title{
+	display:block;
+	font-weight:bold;;
+	color:#393730;
+	padding: 0px 0px 5px 0;
+}
+.rezervace_sum p{
+ 	/* font-size: 14px; */
+	margin: 5px 10px;
+	font-weight: normal;
+}
+form.form_rez {
+	padding-bottom: 1em;
+}
+form.form_rez table.form{
+	width: 100%;
+	background-color: transparent;
+	border:1px solid #b6b4ad;
+	padding:10px;
+}
+form.form_rez table.form label{
+	font-weight: bold;
+	display:inline-block;
+	min-width:65px;
+	padding-right:5px;
+}
+form.form_rez table.form label[for="poznamka"]{
+	padding-right:1px;
+	vertical-align:top;
+}
+form.form_rez table.form textarea{
+	border:1px solid #b6b4ad;
+}
+form.form_rez table.form label.repeat{
+	width:auto;
+	margin-right:10px;
+}
+table.form{
+	margin: 0px;
+	padding: 0px;
+}
+fieldset{
+	padding: 10px;
+	margin: 0px 0px 10px 0px;
+}
+table.form input{
+	border:1px solid #b6b4ad !important;
+	padding: 2px 3px;
+	/*height:20px; */
+}
+table.form td.checkbox{
+	padding-top: 15px;
+}
+table.form input[type="checkbox"] {
+	width: 14px;
+	padding: 0px;
+	margin: 3px 5px 3px 0px;
+	vertical-align:middle;
+	border:0 !important;
+	height:14px;
+}
+table.form input[type="text"].date {
+	background-color: white;
+	width: 6em;
+	vertical-align:top;
+}
+table.form input[type="text"].psc {
+	background-color: white;
+	width: 3.5em;
+}
+table.form input[type="text"].cp_co {
+	background-color: white;
+	width: 3.5em;
+}
+table.form input[type="text"].text{
+	width:210px;
+	margin-right:3px;
+}
+table.form input[type="text"].email{
+	max-width:300px;
+	width: 100%;
+}
+table.form select#aktivita_id{
+	width:274px;
+	padding: 2px 3px;
+}
+table.form input.int_kladny{
+	width:45px !important;
+}
+table.form textarea{
+	background-color: white;
+	width: 23em;
+	height: 6em;
+}
+table.form input[type="text"].time_short {
+	background-color: white;
+	width: 60px;
+
+}
+table.form label[for="jmeno"]{
+	float:left;
+	padding-top:4px;
+}
+label[for="termin_count"],
+label[for="pozice_count"]{
+	padding-top:8px;
+}
+table.form input#pozice_count{
+	position:relative;
+	top:-33px;
+	left:80px;
+	margin-top:-10px;
+}
+#termin_count{
+	display: none;
+}
+table.form input#termin_count_time{
+	position:relative;
+	top:-33px;
+	left:300px;
+	margin-top:-10px;
+	padding:3px 5px;
+	width: 100px;
+	text-align: center;
+}
+
+.form_rez input {margin-left:15px}
+
+.form_rez p.btn{
+	margin-top:25px;
+}
+.form_rez p.btn input.adm_btn,
+.rezervace_kalednar_filtr form input[type="submit"]{
+	color:#fff;
+	font-weight: bold;
+	border:0 !important;
+	background:#00772F;
+	padding:0 10px;
+	height:50px;
+	border-bottom:3px solid #bfbdb6 !important;
+	-moz-border-radius:0 0 6px 6px;
+	-webkit-border-radius:0 0 6px 6px;
+	border-radius:0 0 6px 6px;
+}
+.help_inf
+{
+	color: dodgerblue;
+	font-style: italic;
+}
+
+.rezervace_kalendar{
+	width: 100%;
+	position: relative;
+}
+
+.rezervace_table
+{
+	margin-bottom: 30px;
+	border: 1px solid gray;
+	overflow: auto;
+	width: 100%;
+}
+
+.rezervace_table table
+{
+	border-collapse: collapse;
+	background-color: white;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+.rezervace_table table .time_col
+{
+	border: none;
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+.rezervace_table table .time_col div
+{
+	margin: 0px;
+	padding: 0px;
+}
+.rezervace_table table .termin_col_even
+{
+  background-color: white;
+	border-bottom: 0px solid white;
+	border-top: 0px solid white;
+	border-left: 0px solid white;
+	border-right: 2px solid rgb(173,189,204);
+}
+.rezervace_table table .termin_col_odd
+{
+  background-color: #d3e4eb;
+	border-bottom: 2px solid #d3e4eb;
+	border-top: 0px solid #d3e4eb;
+	border-left: 0px solid #d3e4eb;
+	border-right: 2px solid rgb(173,189,204);
+}
+.rezervace_table table .calendars th
+{
+	/*/*font-size: 12px;*/ */
+	font-weight: normal;
+	color: white;
+	padding: 5px 10px;
+	white-space: nowrap;
+}
+.rezervace_table table .calendars th.odd
+{
+	background-color: dodgerblue;
+	color: white;
+}
+.rezervace_table table .calendars th.even
+{
+	background-color: white;
+	color: dodgerblue;
+}
+.rezervace_table table .calendars th.last_kal
+{
+	border-right: 2px solid white;
+}
+.rezervace_table table .days
+{
+	background-color: white;
+}
+.rezervace_table table .days th
+{
+	font-size: 14px;
+	font-weight: normal;
+	background-color: lightsteelblue;
+	border-bottom: 0px solid white;
+	border-top: 0px solid white;
+	border-left: 0px solid white;
+	border-right: 2px solid white;
+	color: steelblue;
+	padding: 5px 10px;
+	text-align: left;
+}
+.rezervace_table table .days th.empty_thcell div
+{
+	height: 45px;
+}
+
+.rezervace_table table td
+{
+	vertical-align: top;
+	border: none;
+}
+
+.rezervace_table table .calendars_data th
+{
+	vertical-align: top;
+	margin:0px;
+	padding: 5px 0px 0px 0px;
+	background-color: white;
+	position: absolute;
+	left: 1px;
+}
+.rezervace_table table .calendars th.empty_thcell div
+{
+	width: 21px;
+}
+.rezervace_table table .calendars_data th div
+{
+	/*/*font-size: 12px;*/ */
+	font-weight: normal;
+	color: white;
+	background-color: dodgerblue;
+	border: 1px solid dodgerblue;
+	text-align: center;
+}
+.rezervace_table table .calendars_data th div.hover
+{
+	background-color: white;
+	border: none;
+	position: absolute;
+	height: 80px;
+	width: 41px;
+	top: -80px;
+	left: 0px;
+}
+.rezervace_table table .calendars_data th div
+{
+	/* /*font-size: 12px;*/ */
+	font-weight: normal;
+	color: white;
+	background-color: dodgerblue;
+	border: 1px solid transparent;
+	text-align: center;
+}
+.rezervace_table table .calendars_data td
+{
+	margin:0px;
+	padding: 0px;
+	text-align: center;
+  padding: 5px 5px 0px 5px;
+
+}
+.rezervace_table table .calendars_data td div
+{
+	/*/*font-size: 12px;*/ */
+	border-style: solid;
+	overflow: hidden;
+	text-align: left;
+}
+
+.rezervace_table table .calendars_data td div.enable_termin
+{
+	background-color: lightgreen;
+	border-color: green;
+	color: green;
+	clear: both;
+}
+.rezervace_table table .calendars_data td div.enable_termin:hover
+{
+	background-color: palegreen;
+	border-color: orange;
+	cursor: pointer;
+}
+.rezervace_table table .calendars_data td div.enable_termin a
+{
+	display: block !important;
+	height: 100%;
+}
+.rezervace_table table .calendars_data td div.disable_termin
+{
+	background-color: #f08080;
+	border-color: crimson;
+	color: crimson;
+}
+
+.rezervace_table table th.empty_thcell
+{
+	background-color: white;
+	border: 0px solid white;
+}
+.rezervace_table table .calendars_data td div.empty_tdcell
+{
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0px;
+}
+.week_nav
+{
+	width: 100%;
+}
+.week_nav form input[type='submit']
+{
+	border: 1px solid transparent;
+	color: dodgerblue;
+	background-color: transparent;
+	font-weight: normal;
+	font-size: 14px;
+	margin: 10px;
+}
+.week_nav form input[type='submit']:hover
+{
+	color: steelblue;
+	cursor: pointer;
+}
+.week_nav form.week_minus
+{
+	float: left;
+}
+.week_nav form.week_plus
+{
+	float: right;
+}
+
+.jspHorizontalBar
+{
+	border: 1px solid steelblue;
+}
+.jspArrow
+{
+	background-color: steelblue !important;
+}
+.jspTrack
+{
+	background-color: white !important;
+}
+.jspDrag
+{
+	background-color: lightsteelblue !important;
+	border-left: 1px solid steelblue;
+	border-right: 1px solid steelblue;
+}
+/* krok 4 */
+.rezervace_detail_step4{
+	margin-top:20px;
+}
+.rezervace_detail .pin{
+	font-size: 16px;
+	font-weight: normal;
+}
+.rezervace_detail .kalendar,
+.rezervace_detail div.jmeno,
+.rezervace_detail div.email,
+.rezervace_detail div.telefon,
+.rezervace_detail div.rezervace,
+.rezervace_detail p.poznamka{
+	/*font-size: 12px;*/
+	font-weight: bold;
+	padding: 0px 0px 5px 10px;
+	background-image: none;
+}
+.rezervace_detail div.links{
+	margin: 10px;
+}
+.rezervace_detail div.links a{
+	padding-top: 5px;
+	display: block;
+}
+.rezervace_detail .rez_info{
+	font-size: 16px;
+	font-weight: normal;
+}
+.rezervace_detail div.jmeno span,
+.rezervace_detail div.email span,
+.rezervace_detail div.telefon span,
+.rezervace_detail p.poznamka{
+	/*font-size: 12px;*/
+	font-weight: normal;
+}
+.rezervace_detail p.poznamka
+{
+	word-break: break-all;
+}
+.rezervace_detail .opak{
+	font-weight: bold;
+	/*font-size: 12px;*/
+	padding-left: 10px;
+}
+.rezervace_detail table.rezervace_root,
+.rezervace_detail table.rezervace_repeat
+{
+	margin: 10px;
+	/*font-size: 12px;*/
+	border-collapse: collapse;
+}
+.rezervace_detail fieldset{
+	padding: 10px;
+	border: 1px solid #b6b4ad;
+}
+.rezervace_detail fieldset legend{
+	font-weight: normal;
+	color: steelblue;
+	padding: 5px;
+}
+.rezervace_detail table.rezervace_root th,
+.rezervace_detail table.rezervace_repeat th{
+	background-color: #9FA7B0;
+	color: white;
+	padding: 5px 10px;
+	font-weight: normal;
+}
+.rezervace_detail table.rezervace_root tr,
+.rezervace_detail table.rezervace_repeat tr{
+	border: 1px solid gray;
+}
+.rezervace_detail table.rezervace_root td,
+.rezervace_detail table.rezervace_repeat td{
+	padding: 5px 10px;
+}
+a.link_step1{
+	display: block;
+	margin: 10px 20px;
+}
+.rezervace_detail .opak span{
+	font-weight: normal;
+}
+.rezervace_detail .title{
+	color:#507eb6;
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 10px;
+}
+.rezervace .filter_msg{
+	font-size: 14px;
+	margin: 10px 0px;
+	color: maroon;
+}
+.openinghours .openinghours_sel_season{
+	font-size: 14px;
+	font-weight: normal;
+	color: black;
+	margin-top: 20px;
+}
+.openinghours .openinghours_sel_season_name{
+	font-size: 14px;
+	font-weight: bold;
+	color: dodgerblue;
+	margin-top: 20px;
+}
+.tooltip_termin {
+	background-color:#000;
+	border:1px solid #fff;
+	padding:10px 40px 10px 15px;
+	/*width:250px;*/
+	display:none;
+	color:#fff;
+	text-align:left;
+	font-size:12px;
+	font-family: Arial, Verdana, sans-serif;
+}
+.tooltip_termin li{
+	list-style-type: square;
+	padding: 3px 0px 0px 15px;
+	list-style-position: inside;
+}
+.tooltip_termin b{
+	font-weight: normal;
+	/*font-size: 12px;*/
+	color: darkorange;
+}
+
+.tooltip_adr{
+	background-color:dodgerblue;
+	border:1px solid #fff;
+	padding:10px 40px 10px 15px;
+	display:none;
+	color:#fff;
+	text-align:left;
+	font-size:12px;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: bold;
+}
+
+
+div.tooltip_formhelp
+{
+	display:none;
+	background:black;
+	border: 1px solid white;
+	outline: 1px solid black;
+	font-size:12px;
+	font-weight: normal;
+	padding:10px;
+	color:whitesmoke;
+	max-width: 250px;
+	font-family: Arial, Verdana, sans-serif;
+	z-index: 100;
+	text-align: left;
+}
+div.tooltip_formhelp p
+{
+	padding-bottom: 5px;
+}
+div.tooltip_formhelp p.example
+{
+	font-weight: normal;
+	font-style: italic;
+	color: lightskyblue;
+	margin-top: 10px !important;
+	padding: 5px;
+	border: 1px solid lightskyblue;
+}
+div.tooltip_formhelp p.tip
+{
+	font-weight: normal;
+	font-style: italic;
+	color: lightskyblue;
+	margin-top: 10px !important;
+	padding: 5px;
+	border: 1px solid lightskyblue;
+}
+div.tooltip_formhelp p.tip .tip_flag
+{
+	padding: 0px;
+	margin: 0px;
+	width: 0px;
+}
+div.tooltip_formhelp p.tip .tip_flag:after
+{
+	content: 'Tip: ';
+	font-weight: bold;
+}
+
+.tooltip_stav
+{
+	display:none;
+	background-color:black;
+	border: 1px solid white;
+	outline: 1px solid black;
+	font-size:11px;
+	font-weight: normal;
+	padding:5px;
+	max-width: 250px;
+	color:white;
+	font-family: Arial, Verdana, sans-serif;
+	z-index: 10000;
+}
+
+.tooltip_poznamka
+{
+	display:none;
+	background:black;
+	border: 1px solid whitesmoke;
+	outline: 1px solid black;
+	font-size:12px;
+	font-weight: normal;
+	padding:10px;
+	color:whitesmoke;
+	max-width: 250px;
+	font-family: Arial, Verdana, sans-serif;
+	text-align: left;
+}
+
+.form_vyjimky fieldset,
+.form_vyjimky table.form
+{
+	width: 427px;
+}
+form.seasongroup fieldset,
+form.seasongroup table.form
+{
+	width: 577px;
+}
+div.seasons fieldset
+{
+	width: 505px;
+}
+div.settings fieldset
+{
+	width: 520px;
+}
+div.settings table.form
+{
+	width: 540px;
+}
+form.sluzba fieldset,
+form.sluzba table.form
+{
+	width: 577px;
+}
+form.adresa fieldset,
+form.adresa table.form
+{
+	width: 577px;
+}
+form.kalendar_spravce fieldset,
+form.kalendar_spravce table.form
+{
+	width: 427px;
+}
+form.aktivita fieldset,
+form.aktivita table.form
+{
+	width: 427px;
+}
+form.casovajednotka fieldset,
+form.casovajednotka table.form{
+	width: 427px;
+}
+/* skin kalendar */
+.zoom{
+	margin:10px;
+	padding:0;
+}
+.zoom a{
+	text-decoration:none;
+	font-size:16px;
+}
+.zoom img{
+	padding:0 10px 0 0;
+	width:30px;
+}
+.zoom span{
+	position:relative;
+	top:-10px;
+}
+.rezervace_kalednar_filtr{
+	border:1px solid #b6b4ad;
+	padding:10px;
+	margin-top:10px;
+}
+.rezervace_kalednar_filtr label{
+	font-weight: bold;
+	width:120px;
+	display:inline-block;
+}
+.rezervace_kalednar_filtr select#kalid{
+	width:210px;
+	height:20px;
+	margin:2px 0;
+}
+.rezervace_kalednar_filtr table.form{
+	margin-bottom:10px;
+	width:auto;
+}
+body.popup2{
+	background:white;
+	display:block;
+	text-align:left;
+	padding:0;
+}
+body.popup2 .rez_kalendar_skin{
+	background:white;
+	width:auto;
+	padding:5px 10px;
+	font-family: Arial, Verdana, sans-serif;
+}
+body.popup2 #content{
+	background:white;
+	width:100%;
+}
+body.popup2 .rezervace_step_inf{
+	float:left;
+	margin:10px 0;
+	clear:both;
+	width:auto;
+}
+body.popup2 .rezervace_search{
+	float:left;
+	width:45%;
+}
+body.popup2 .rezervace_kalednar_filtr{
+	float:left;
+	margin-left:20px;
+	margin-top:-4px;
+}
+body.popup2 .week_nav{
+	clear:both;
+}
+
+#repeat_hidden td
+{
+	padding-bottom: 10px;
+}
+
+tr.poznamka_row label
+{
+	display: block !important;
+}
+tr.poznamka_row textarea#poznamka
+{
+	width: 342px;
+	height: 100px;
+	border: 1px solid #B6B4AD !important;
+}
+tr.poznamka_row td
+{
+	vertical-align: top !important;
+}
+.rezervace_wizard {
+	display:flex;
+	flex-direction:column;
+	padding:0;
+	margin: 0 -15px;
+}
+.rezervace_wizard div.error_log
+{
+	/*font-size: 12px;*/
+	font-weight: normal;
+	border: 1px solid lightsteelblue;
+}
+.rezervace_wizard div.error_log h5
+{
+	font-weight: normal;
+	/*font-size: 12px;*/
+	color: white;
+	padding: 4px 10px;
+	margin: 0px;
+	background-color: lightsteelblue;
+}
+.rezervace_wizard .error_log li
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: steelblue;
+	padding: 2px 10px;
+}
+.rezervace_wizard .error_log p
+{
+	/*font-size: 12px;*/
+	font-weight: normal;
+	color: black;
+	padding: 4px 10px;
+}
+.rezervace_wizard .error_log p a
+{
+	text-decoration: underline;
+	color: steelblue;
+}
+.rezervace_wizard .error_log p a:hover
+{
+	text-decoration: none;
+	color: dodgerblue;
+}
+.rezervace_wizard .error_log li.novalid
+{
+	color: darkred;
+}
+.rezervace_detail table td.info_icons
+{
+	padding: 5px 20px 5px 0px;
+	width: 50px;
+}
+.rezervace_detail table td.info_icons .ico_poznamka
+{
+	margin-right: 5px;
+}
+.rezervace_detail table td.info_icons .ico_pozice
+{
+	display: inline-block;
+	position: relative;
+}
+.rezervace_detail table td.info_icons span
+{
+	position: absolute;
+	color: steelblue;
+	font-weight: bold;
+	font-size: 11px;
+	left: 18px;
+	bottom: 0px;
+}
+.rezervace_detail table td.info_icons .ico_pozice
+{
+	display: inline-block;
+	position: relative;
+}
+
+
+.ui-slider {
+	width:79% !important
+}

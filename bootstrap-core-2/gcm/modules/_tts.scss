@@ -1,0 +1,171 @@
+/* TTS */
+.tts_wrap {
+    max-height: 40px;
+    margin-bottom: 2 * $spacer;
+
+    .lcs {
+        width: 150px;
+        height: 35px;
+        padding: 7px 11px;
+        font-size: 12px;
+        text-transform: uppercase;
+        background-color: $color-form-bg;
+        cursor: pointer;
+
+        &::before {
+            @include gcm-fa-icon;
+
+            content: fa-content($fa-var-volume-up);
+            margin-right: $spacer;
+            font-size: 14px;
+            color: $color-date;
+        }
+    }
+
+    .tts_loading {
+        position: relative;
+        top: -27px;
+        display: none;
+        width: 140px;
+        height: 32px;
+        background-color: $color-form-bg;
+
+        &::before {
+            @include gcm-fa-icon;
+
+            content: fa-content($fa-var-ellipsis-h);
+            width: 100%;
+            text-align: center;
+            color: $color-date;
+        }
+    }
+
+    .jp-audio {
+        .jp-no-solution,
+        .hidden2 {
+            @include sr-only;
+        }
+
+        .jp-type-single {
+            .jp-interface {
+                position: relative;
+                top: -27px;
+                display: flex;
+                justify-content: space-between;
+                height: 35px;
+                padding: 10px 11px;
+                line-height: 1;
+                background-color: $color-form-bg;
+
+                .jp-controls {
+                    display: flex;
+                    list-style-type: none;
+                    padding-inline-start: 0;
+                }
+
+                .jp-play,
+                .jp-pause,
+                .jp-stop,
+                .jp-divider,
+                .jp-close {
+                    display: block;
+                    visibility: hidden;
+                    margin-right: 19px;
+                    font-size: 1px;
+                    letter-spacing: -1px;
+
+                    &::before {
+                        @include gcm-fa-icon;
+
+                        content: fa-content($fa-var-volume-up);
+                        visibility: visible;
+                        font-size: 14px;
+                        color: $color-date;
+                    }
+                }
+
+                .jp-close,
+                .jp-stop,
+                .jp-divider { margin-right: 0; }
+
+                .jp-play::before { content: fa-content($fa-var-play); }
+                .jp-pause::before { content: fa-content($fa-var-pause); }
+                .jp-stop::before { content: fa-content($fa-var-stop); }
+                .jp-divider::before {
+                    content: fa-content($fa-var-volume-up);
+                    position: absolute;
+                    left: 63%;
+
+                    @include media-breakpoint-up(sm) { left: 66%; }
+
+                    @include media-breakpoint-up(md) { left: 68%; }
+
+                    @include media-breakpoint-up(lg) { left: 69%; }
+                }
+
+                .jp-close {
+                    z-index: 1;
+
+                    &::before { content: fa-content($fa-var-times); }
+                }
+
+                .jp-progress {
+                    width: 40%;
+                    padding: 4px 0;
+
+                    @include media-breakpoint-up(md) { width: 50%; }
+
+                    .jp-seek-bar {
+                        height: 6px;
+                        background-color: #b3b3b3;
+                        cursor: pointer;
+
+                        .jp-play-bar {
+                            height: 6px;
+                            background-color: $color-date;
+                        }
+                    }
+                }
+
+                .jp-volume-bar {
+                    position: relative;
+                    width: 20%;
+                    height: 15px;
+                    background-color: #b3b3b3;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "\A";
+                        position: absolute;
+                        border-width: 15px 70px 10px 0;
+                        border-style: solid;
+                        border-color: $color-form-bg transparent transparent transparent;
+
+                        @media (min-width: 420px) and (max-width: 575.98px) { border-right-width: 105px; }
+
+                        @include media-breakpoint-up(sm) { border-right-width: 136px; }
+
+                        @include media-breakpoint-up(md) { border-right-width: 150px; }
+                    }
+
+                    .jp-volume-bar-value {
+                        height: 15px;
+                        background-color: $color-date;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.homepage .tts_wrap .jp-audio .jp-type-single .jp-interface .jp-volume-bar::before {
+    @include media-breakpoint-up(md) { border-right-width: 175px; }
+
+    @include media-breakpoint-up(lg) { border-right-width: 205px; }
+}
+
+@media only screen and (hover: none) {
+    .tts_wrap .jp-audio .jp-type-single .jp-interface .jp-progress {
+        width: 75% !important;
+    }
+}

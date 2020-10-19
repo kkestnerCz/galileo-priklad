@@ -1,0 +1,37 @@
+.gcm-vertical-column {
+    @extend .d-print-none;
+
+    border: $columns-bg-border;
+    border-radius: $columns-border-radius;
+
+    .gcm-main-container & {
+        @extend .col-md-4;
+        @extend .col-lg-3;
+
+        @if $columns-vertical-homepage == false {
+            .homepage & {
+                @include sr-only;
+            }
+        }
+    }
+
+    .leftbox,
+    .rightbox {
+        @extend .d-flex;
+        @extend .flex-column;
+
+        margin-bottom: $columns-mb;
+        border: $columns-border;
+
+        .editor_mini,
+        .module_mini,
+        .minievts {
+            @if $columns-horizontal-equal == true {
+                flex-grow: 1;
+            }
+
+            border-radius: 0 0 $columns-border-radius $columns-border-radius;
+            background: $columns-bg;
+        }
+    }
+}

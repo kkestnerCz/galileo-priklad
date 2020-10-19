@@ -1,0 +1,244 @@
+/* menu */
+$menu-font-size: 18px;
+$menu-font-color: $color-date;
+$menu-font-weight: 400;
+$menu-text-decoration: none !default;
+
+$menu-border: 1px solid $color-date;
+$menu-bg: $color-body-bg;
+$menu-border-radius: $border-radius !default;
+$menu-bg-hover: $color-date;
+
+$menu-hover-color: $color-body-bg;
+$menu-hover-before-color: $menu-hover-color !default;
+$menu-hover-text-decoration: $menu-text-decoration !default;
+
+$menu-before-fa-icon: $menu-hover-color;
+$menu-before-mr: 1rem !default;
+$menu-before-color: $menu-hover-color;
+$menu-before-size: 0.75em !default;
+$menu-before-bottom: 1px !default;
+
+$menu-after-fa-icon: $fa-var-angle-down !default;
+$menu-after-ml: 1rem !default;
+$menu-after-color: "";
+$menu-after-size: 0.75em !default;
+$menu-after-bottom: 1px !default;
+
+$menu-sub-font-size: 1rem !default;
+$menu-sub-bg: rgba(0, 60, 138, 0.6);
+$menu-sub-border-radius: $menu-border-radius !default;
+$menu-sub-hover-bg: $color-body-bg;
+$menu-sub-color: $menu-hover-color;
+$menu-sub-hover-color: $color-date;
+$menu-sub-hover-before-color: $color-highlighting-date;
+
+$menu-sub-before-fa-icon: "";
+$menu-sub-before-mr: $spacer * 2 !default;
+$menu-sub-before-color: $color-date;
+$menu-sub-before-size: 1rem !default;
+$menu-sub-before-top: 6px !default;
+
+//pro siroke submenu
+$submenu-wide-height-offset: auto;
+
+.gcm-menu-wrapper {
+    @extend .d-print-none;
+
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    background: $menu-bg;
+
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav {
+        @extend .nav-fill;
+
+        font-family: $font-family-base;
+        border-radius: $menu-border-radius;
+    }
+
+    .item {
+        @extend .navbar-text;
+
+        padding: 0;
+        border-radius: $menu-border-radius;
+
+        @include media-breakpoint-up(lg) {
+            border-left: $menu-border;
+
+            &:last-of-type {
+                border-right: $menu-border;
+            }
+        }
+
+        &:hover {
+            background: $menu-bg-hover;
+
+            & > a {
+                text-decoration: $menu-hover-text-decoration;
+                color: $menu-hover-color;
+            }
+
+            & > ::before,
+            & > a::after {
+                color: $menu-hover-before-color;
+            }
+        }
+
+        &:focus-within {
+            /* kvuli MS EDGE musi byt rozdeleno, jinak nefunguje rozbaleni menu */
+            background: $menu-bg-hover;
+
+            & > a {
+                text-decoration: $menu-hover-text-decoration;
+                color: $menu-hover-color;
+            }
+
+            & > ::before,
+            & > a::after {
+                color: $menu-hover-before-color;
+            }
+        }
+
+        &:last-of-type .nav {
+            @extend .dropdown-menu-right;
+        }
+    }
+
+    .nav-link {
+        padding: $spacer * 3;
+        font-weight: $menu-font-weight;
+        font-size: $menu-font-size;
+        text-decoration: $menu-text-decoration;
+        color: $menu-font-color;
+
+        /* &::before {
+            @include gcm-fa-icon;
+
+            content: fa-content($menu-before-fa-icon);
+            position: relative;
+            bottom: $menu-before-bottom;
+            margin-right: $menu-before-mr;
+            font-size: $menu-before-size;
+            color: $menu-before-color;
+        } */
+    }
+
+    .subitems {
+        a::after {
+            @include gcm-fa-icon;
+
+            content: fa-content($menu-after-fa-icon);
+            position: relative;
+            bottom: $menu-after-bottom;
+            margin-left: $menu-after-ml;
+            font-size: $menu-after-size;
+            color: $menu-after-color;
+        }
+
+        ul {
+            display: none;
+            padding: 15px;
+            margin: 0;
+            background: $menu-sub-bg;
+
+            @extend .dropdown-menu;
+            @extend .border-0;
+
+            .item {
+                @extend .dropdown-item;
+
+                min-width: 250px;
+                padding: 2px;
+                white-space: normal;
+
+                ul {
+                    display: none !important;
+                }
+
+                &:hover {
+                    border-radius: $menu-sub-border-radius;
+                    background: transparent;
+
+                    a::before {
+                        color: $menu-sub-hover-before-color;
+                    }
+
+                    a {
+                        color: $menu-sub-hover-color;
+                        background: $menu-sub-hover-bg;
+                    }
+                }
+
+                &:focus-within {
+                    border-radius: $menu-sub-border-radius;
+
+                    /* kvuli MS EDGE musi byt rozdeleno, jinak nefunguje rozbaleni menu */
+
+                    a::before {
+                        color: $menu-sub-hover-before-color;
+                    }
+
+                    a {
+                        color: $menu-sub-hover-color;
+                        background: $menu-sub-hover-bg;
+                    }
+                }
+
+                &.active {
+                    background: $menu-sub-hover-bg;
+
+                    a,
+                    a::before {
+                        color: $menu-sub-hover-color;
+                    }
+                }
+            }
+
+            .nav-link {
+                display: flex;
+                padding: 0.8rem 1rem;
+                font-size: $menu-sub-font-size;
+                color: $menu-sub-color;
+                background-color: $color-date;
+
+                &::after {
+                    content: none;
+                }
+
+                &::before {
+                    @include gcm-fa-icon;
+
+                    content: fa-content($menu-sub-before-fa-icon);
+                    position: relative;
+                    top: $menu-sub-before-top;
+                    margin-right: $menu-sub-before-mr;
+                    font-size: $menu-sub-before-size;
+                    color: $menu-sub-before-color;
+                }
+            }
+        }
+
+        &:hover ul {
+            display: block;
+        }
+
+        &:focus-within ul {
+            /* kvuli MS EDGE musi byt rozdeleno, jinak nefunguje rozbaleni menu */
+            display: block;
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .gcm-menu-wrapper .subitems:not(:first-of-type):not(:nth-of-type(2)) ul {
+        right: 0;
+        left: auto;
+    }
+}

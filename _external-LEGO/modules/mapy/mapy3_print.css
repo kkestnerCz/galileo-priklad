@@ -1,0 +1,62 @@
+body {
+	font-family: Arial;
+	max-width: 750px;
+}
+
+html {
+	background: none !important;
+}
+
+
+.route_distance, .route_altitude {
+	float: right;
+	clear: right;
+}
+.number {
+	position: relative;
+	top: -49px;
+	left: 10px;
+	font-size: 12px;
+}
+.route_print_number {
+	position: relative;
+	left: -20px;
+	top: -6px;
+	text-align: center;
+	width: 20px;
+	display: inline-block;
+	font-size: 10px;
+	color: #FFF;
+	line-height: 20px;
+	
+}
+.route_print_number.hundreds {
+	font-size:8px;
+	top: -7px;
+	left: -21px;
+}
+.route_text img {margin-right:26px;padding-top: 2px;}
+
+.route_destination span.text {
+	position: relative;
+	left: 30px;
+	top: -47px;
+}
+.route_destination .route_print {
+	position: relative;	
+	top: -20px;
+	margin-bottom: -20px
+}
+.route_destination.first span.text, .route_destination.last span.text {
+	left: -20px;
+	top: -27px;
+} 
+.route_destination.first .number, .route_destination.last .number {
+	top: -30px;
+	left: -40px;
+	
+} 
+.route_destination.last {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}

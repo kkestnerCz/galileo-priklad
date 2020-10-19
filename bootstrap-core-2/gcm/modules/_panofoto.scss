@@ -1,0 +1,39 @@
+/* panofotky */
+.panoitem span.title {
+    display: block;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.pano ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.panoitem img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 641px) {
+    .pano ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li.panoitem {
+        display: flex;
+        max-width: 47%;
+        margin: 1%;
+    }
+
+    .pano .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .panoitem span.title {
+        display: block;
+        padding: 5px 0;
+        margin: auto 0;
+    }
+}

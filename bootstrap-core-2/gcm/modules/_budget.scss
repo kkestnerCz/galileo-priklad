@@ -1,0 +1,183 @@
+/* rozpocet */
+.rozpocet-guest {
+
+    table.table {
+        border-collapse: collapse !important;
+        border-top: 1px solid $color-border;
+
+        tr {
+            border-bottom: 1px solid $color-border;
+
+            &.has-detail {
+                cursor: pointer;
+            }
+
+            &:nth-of-type(odd) {
+                background: transparent;
+            }
+        }
+
+        @extend .table-borderless;
+
+        .colored {
+            color: #227716;
+        }
+
+        tfoot {
+            background: $color-form-bg;
+        }
+    }
+
+    .budget-files {
+        margin-top: $default-margin;
+    }
+
+    .header .back-link {
+        top: 0;
+        right: 0;
+        text-align: right;
+
+        a {
+            display: block;
+        }
+    }
+
+    .footer .back-link {
+        text-align: right;
+
+        a {
+            display: block;
+        }
+    }
+
+    .table-categories {
+        table {
+            td.link.icon {
+                display: block;
+                padding: 10px 5px 10px 40px;
+                overflow: auto;
+                background-position: 5px center;
+                background-repeat: no-repeat;
+            }
+
+            td.link.icon-2-0 {
+                background-image: url(images/rozpocet/2-0.png);
+            }
+
+            td.link.icon-2-1 {
+                background-image: url(images/rozpocet/2-1.png);
+            }
+
+            td.link.icon-2-2 {
+                background-image: url(images/rozpocet/2-2.png);
+            }
+
+            td.link.icon-2-3 {
+                background-image: url(images/rozpocet/2-3.png);
+            }
+
+            td.link.icon-2-4 {
+                background-image: url(images/rozpocet/2-4.png);
+            }
+
+            td.link.icon-2-5 {
+                background-image: url(images/rozpocet/2-5.png);
+            }
+
+            td.link.icon-2-6 {
+                background-image: url(images/rozpocet/2-6.png);
+            }
+
+            td.link.icon-2-7 {
+                background-image: url(images/rozpocet/2-7.png);
+            }
+
+            td.link.icon-2-8 {
+                background-image: url(images/rozpocet/2-8.png);
+            }
+
+            td.link.icon-2-9 {
+                background-image: url(images/rozpocet/2-9.png);
+            }
+
+            td.link.icon-2-10 {
+                background-image: url(images/rozpocet/2-10.png);
+            }
+
+            td.link.icon-2-11 {
+                background-image: url(images/rozpocet/2-11.png);
+            }
+
+            td.link.icon-2-12 {
+                background-image: url(images/rozpocet/2-12.png);
+            }
+
+            td.link.icon-summary {
+                background-image: url(images/rozpocet/summary.png);
+            }
+        }
+    }
+}
+
+.budget-item {
+    .title {
+        margin-bottom: 10px;
+    }
+}
+
+.budget-files,
+.budget-files .files-list.files-list-full {
+    margin-top: $default-margin;
+}
+
+.budget-group-detail {
+    .detail {
+        border-top: 1px solid $color-border;
+
+        .title {
+            margin-top: $default-margin;
+        }
+
+        .categorie-box {
+            span {
+                display: block;
+                font-weight: bold;
+                font-size: 130%;
+            }
+
+            .categorie-info {
+                right: 0;
+                bottom: 5px;
+                text-align: right;
+                vertical-align: bottom;
+
+                span {
+                    display: block;
+                    font-size: 100%;
+                }
+
+                .categorie-volume {
+                    font-size: 130%;
+                }
+            }
+        }
+    }
+
+    .header .back-link {
+        top: 0;
+        right: 0;
+        text-align: right;
+
+        a {
+            display: block;
+        }
+    }
+
+    .footer .back-link {
+        text-align: right;
+
+        a {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+$ftresult-bg: #ff0 !important;
+$ftresult-color: #000 !important;
+
+.ftresult {
+    color: $ftresult-color;
+    background: $ftresult-bg;
+}
+
+.body_fulltextsearch .module_content {
+    form,
+    [id="advanced-search"] {
+        @include form;
+    }
+
+    .search-result-row {
+        margin-bottom: $default-margin;
+
+        .ftresult {
+            color: $color-text;
+            background: transparent !important;
+        }
+
+        .search-info {
+            color: $color-text-muted;
+
+            .icon {
+                @include gcm-fa-icon;
+
+                color: $color-date;
+
+                &.pdf::before {
+                    content: fa-content($fa-var-file-pdf);
+                }
+
+                &.doc::before {
+                    content: fa-content($fa-var-file-word);
+                }
+
+                &.docx::before {
+                    content: fa-content($fa-var-file-word);
+                }
+
+                &.xls::before {
+                    content: fa-content($fa-var-file-excel);
+                }
+
+                &.jpg::before {
+                    content: fa-content($fa-var-file-image);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.accordion .card {
+    border: none;
+    background: transparent;
+
+    .card-header {
+        padding: $spacer 0;
+        border-bottom: none;
+        background: transparent;
+
+        button {
+            & > h2,
+            & > h3,
+            & > h4 {
+                padding-left: 1.3em;
+                margin-bottom: 0;
+                text-align: left;
+                white-space: normal;
+
+                @include mp-item_name-size;
+                @include link-text;
+
+                &::before {
+                    @include gcm-fa-icon ;
+
+                    content: fa-content($fa-var-minus);
+                    width: 1.3em;
+                    margin-left: -1.3em;
+                    vertical-align: middle;
+                    color: $color-date;
+                }
+            }
+
+            &.collapsed h2::before,
+            &.collapsed h3::before,
+            &.collapsed h4::before {
+                content: fa-content($fa-var-plus);
+            }
+        }
+    }
+
+    .card-body {
+        h2 {
+            @include mp-item_name-size;
+        }
+
+        h3,
+        .item .item-heading {
+            @include h4-size;
+        }
+
+        h4 {
+            @include font-size-base;
+        }
+    }
+}

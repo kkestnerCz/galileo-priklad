@@ -1,0 +1,15 @@
+.gcm-horizontal-column {
+    @extend .pt-6;
+    @extend .gcm-vertical-column;
+    background: $columns-horizontal-bg;
+}
+
+.gcm-horizontal-column__row {
+    @extend .row;
+
+    .rightbox,
+    .leftbox {
+        @extend .col-sm-6;
+        @extend .col-lg-3;
+    }
+}

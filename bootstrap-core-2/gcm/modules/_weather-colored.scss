@@ -1,0 +1,57 @@
+$weather-cloud: #4d4d4d !default;
+$weather-water: #2388c8 !default;
+$weather-sun: #e9c313 !default;
+$weather-highlight: $color-highlighting-text !default;
+
+.icon.weather {
+    --weather-cloud: #{$weather-cloud};
+    --weather-water: #{$weather-water};
+    --weather-sun: #{$weather-sun};
+}
+
+.highlight .icon use {
+    --weather-cloud: #{$weather-highlight};
+    --weather-water: #{$weather-highlight};
+    --weather-sun: #{$weather-highlight};
+}
+
+.day {
+    margin-bottom: $default-margin;
+
+    .day_heading {
+        margin-bottom: $default-margin;
+        font-size: $h2-font-size-sm;
+    }
+
+    .icon {
+        max-height: 100px;
+    }
+
+    .itwrap {
+        @include make-row();
+
+        @extend .mb-6;
+
+        padding: 0 $spacer * 3;
+
+        .icon {
+            @include make-col(8);
+        }
+
+        .temp {
+            @include make-col(4);
+
+            font-size: $h2-font-size-sm;
+
+            .temp_max {
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+    .details {
+        .description {
+            margin-bottom: $spacer * 3;
+        }
+    }
+}

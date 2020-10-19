@@ -1,0 +1,17 @@
+[id="lock_content"] {
+    position: absolute;
+    right: 25px;
+
+    a {
+        img {
+            display: none;
+        }
+
+        &::before {
+            @include gcm-fa-icon;
+
+            content: fa-content($fa-var-lock-alt);
+            color: $color-date;
+        }
+    }
+}

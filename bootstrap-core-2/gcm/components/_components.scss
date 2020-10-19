@@ -1,0 +1,64 @@
+/* epodatelna - rozcestnik */
+.epodatelna {
+    .rozcestnik a {
+        margin-bottom: $menu-tabs-mr;
+    }
+}
+
+/* FAQ */
+[id="faq-form-collapse"] {
+    @include form;
+
+    margin: ($spacer * 3) 0;
+}
+
+.faq-answer {
+    margin-top: 1rem;
+}
+
+/* komunal */
+.communal_services_content {
+    form.filter {
+        @include form;
+    }
+}
+
+/* links */
+.link-text {
+    @include link-text();
+}
+
+/* perex */
+.perex {
+    @include perex();
+}
+
+/* EU cookies */
+.eu-cookies-alert {
+    @include media-breakpoint-down(xs) {
+        margin-top: 40px;
+    }
+
+    button {
+        @include button-primary;
+    }
+}
+
+/* univerzalni formular */
+.form_uni {
+    .required::after {
+        content: "*";
+        margin-left: 10px;
+        color: #d43f3a;
+    }
+
+    .submit {
+        margin-top: $default-margin;
+    }
+}
+
+/* interaktivni mapy */
+.gcmMapImage {
+    width: 100% !important;
+    height: 50vh !important;
+}

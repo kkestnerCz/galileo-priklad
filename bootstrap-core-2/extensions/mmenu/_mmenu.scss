@@ -1,0 +1,23 @@
+@include media-breakpoint-down(xs) {
+    .gcm-menu-wrapper {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .mm-menu,
+    .gcm-menu-header {
+        display: none !important;
+    }
+}
+
+.gcm-menu-header {
+    color: $mmenu-color !important;
+    background: $mmenu-bg !important;
+}
+
+/* fix bootstrap modal window and mmenu collision
+see: https://stackoverflow.com/questions/35038146/bootstrap-modal-and-mmenu-menu-clashing */
+body.modal-open .mm-slideout {
+    z-index: inherit;
+}

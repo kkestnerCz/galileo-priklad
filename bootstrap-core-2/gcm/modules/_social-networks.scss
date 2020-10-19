@@ -1,0 +1,47 @@
+.social-network-button-wrapper {
+    display: inline-block;
+
+    &.facebook {
+        margin-right: 5px;
+    }
+
+    &.twitter.share {
+        position: relative;
+        top: 10px;
+    }
+
+    &.send {
+        display: none;
+    }
+
+    margin-bottom: 15px;
+}
+
+.social-network-button-wrapper {
+    display: inline;
+
+    &.sharelink {
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        a::before {
+            @include gcm-fa-icon;
+
+            @extend .fab;
+
+            font-size: 30px;
+        }
+
+        &.facebook a::before {
+            content: fa-content($fa-var-facebook-square);
+            color: #3b5998;
+        }
+
+        &.twitter a::before {
+            content: fa-content($fa-var-twitter-square);
+            color: #38a1f3;
+        }
+    }
+}

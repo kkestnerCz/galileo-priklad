@@ -1,0 +1,154 @@
+$mp-widget-mb: $default-margin !default;
+
+.multipage {
+    .divider2 {
+        .col-12.col-sm-8.col-md-12.col-lg-8,
+        .col-12.col-lg {
+            .feed_item.pictureontop {
+                @include media-breakpoint-up(md) {
+                    @include make-col(6);
+                }
+            }
+        }
+
+        .file_storage {
+            .file-details {
+                flex: 1 75% !important;
+            }
+        }
+    }
+
+    .divider2,
+    .divider3 {
+        .card-group.feed_item.col-4.pictureontop {
+            @include media-breakpoint-up(lg) {
+                @include make-col(12);
+            }
+
+            @media (min-width: 575.98px) and (max-width: 767.98px) {
+                @include make-col(12);
+            }
+        }
+    }
+
+    .divider3,
+    .divider2 .col-sm-4 {
+        font-size: $font-size-base;
+
+        h2 {
+            font-size: $h2-font-size;
+        }
+
+        h3 {
+            font-size: $h3-font-size;
+        }
+
+        h4 {
+            font-size: $h4-font-size;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .divider3 .col-12.col-lg {
+            @include make-col(4);
+        }
+    }
+
+    .card,
+    .feed_item:not(.card-group) {
+        &:hover {
+            @include shadows;
+        }
+    }
+
+    .highlight {
+        padding: 3 * $spacer;
+        padding-top: (2 * $spacer);
+        padding-bottom: $mp-item-mb;
+        margin-bottom: $mp-widget-mb;
+        color: $color-highlighting-text;
+        border-radius: $border-radius;
+        background: $color-highlighting-bg !important;
+
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: $color-highlighting-heading;
+        }
+
+        a {
+            color: $color-highlighting-link;
+
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: $color-highlighting-link !important;
+            }
+
+            .item_description,
+            .file-details {
+                color: $color-highlighting-text !important;
+            }
+
+            .icon,
+            .item_date::before {
+                color: $color-highlighting-date !important;
+            }
+        }
+
+        .date {
+            color: $color-highlighting-date;
+        }
+
+        &.uredni_deska {
+            .feed_item {
+                background: $color-highlighting-bg;
+            }
+        }
+    }
+
+    .feed_item:not(.pictureontop):not(:last-of-type) a,
+    .feed_item:not(.pictureontop):not(:last-of-type) a:hover,
+    .feed_item:not(.pictureontop):last-of-type ,
+    .feed_item:not(.pictureontop):last-of-type:hover {
+        display: flex;
+        padding-bottom: 10px;
+        border-bottom: $mp-border !important;
+    }
+
+    .divider2,
+    .divider3 {
+        .evts,
+        .evts_galerie {
+            .picture.col-3.picture-left,
+            .picture.col-3.picture-right {
+                @include make-col(12);
+            }
+
+            .card-group.feed_item.col.col-lg-4.pictureontop,
+            .card-group.feed_item.col-4.pictureontop {
+                @include make-col(12);
+
+                border: none; //proměnná
+            }
+        }
+
+        .highlight {
+            padding: 3 * $spacer;
+            margin: 0 0 $mp-widget-mb;
+        }
+    }
+
+    .divider3 {
+        .card-group.feed_item.col-4.pictureontop {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+
+    .widget {
+        margin-bottom: $mp-widget-mb;
+    }
+}

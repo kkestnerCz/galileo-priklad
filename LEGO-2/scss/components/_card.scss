@@ -1,0 +1,117 @@
+$mp-events-card-bg: $color-form-bg;
+$mp-events-card-hover: $color-content-bg;
+$mp-events-card-name-color: $mp-events-item-name-color;
+$mp-events-card-name-color-hover: $mp-events-item-name-hover-color;
+$mp-events-card-name-text-decoration: $mp-events-item-name-text-decoration;
+$mp-events-card-name-hover-text-decoration: $mp-events-item-name-hover-text-decoration;
+$mp-events-card-date-color: $mp-events-item-date-color;
+$mp-events-card-hover-date-color: $mp-events-item-date-color;
+$mp-events-card-date-before-font-color: $mp-events-item-date-before-font-color;
+$mp-events-card-hover-date-before-font-color: $mp-events-item-date-before-font-color;
+$mp-events-card-description-color: $mp-events-item-description-color;
+$mp-events-card-hover-description-color: $mp-events-item-description-color;
+$mp-events-card-border: 0; // 1px solid color;
+$mp-events-card-border-hover: 0; // 1px solid color;
+
+$card-shadow: $box-shadow;
+$mp-cards-col: 3;
+
+.body_multipage {
+    .multipage {
+        .pictureontop.feed_item .card {
+            border: $mp-events-card-border;
+            background: $mp-events-card-bg;
+
+            .item_name {
+                text-decoration: $mp-events-card-name-text-decoration;
+                color: $mp-events-card-name-color;
+            }
+
+            .item_date {
+                color: $mp-events-card-date-color;
+
+                &::before {
+                    color: $mp-events-card-date-before-font-color;
+                }
+            }
+
+            .item_description {
+                color: $mp-events-card-description-color;
+            }
+
+            .card-img-top {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+
+            &:hover {
+                border: $mp-events-card-border-hover;
+                background: $mp-events-card-hover;
+                box-shadow: $card-shadow;
+
+                .item_name {
+                    text-decoration: $mp-events-card-name-hover-text-decoration;
+                    color: $mp-events-card-name-color-hover;
+                }
+
+                .item_date {
+                    color: $mp-events-card-hover-date-color;
+
+                    &::before {
+                        color: $mp-events-card-hover-date-before-font-color;
+                    }
+                }
+
+                .item_description {
+                    color: $mp-events-card-hover-description-color;
+                }
+            }
+
+            /* tlacitko na dlazdicich - vychazi ze styleguidu Aktuality nebo fotogalerie */
+            .fake-detail-link {
+                @include sr-only;
+
+                @extend .btn;
+
+                color: $btn-color;
+                border: $btn-border;
+                background: $btn-bg;
+
+                &:hover {
+                    color: $btn-hover-color;
+                    border: $btn-hover-border;
+                    background: $btn-hover-bg;
+                }
+
+                .detail-icon {
+                    display: none;
+
+                    &::before {
+                        content: fa-content("\f35a");
+                        margin-left: 10px;
+                        vertical-align: 0;
+
+                        @include gcm-fa-icon;
+                    }
+                }
+
+                .detail-text {
+                }
+            }
+        }
+    }
+}
+
+.multipage {
+    .card-group.feed_item.col-4.pictureontop {
+        @include make-col($mp-cards-col);
+
+        @include media-breakpoint-down(lg) {
+            @include make-col(6);
+        }
+
+        @media (max-width: 500px) {
+            @include make-col(12);
+        }
+    }
+}

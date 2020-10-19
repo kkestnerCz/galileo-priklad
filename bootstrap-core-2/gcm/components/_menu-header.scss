@@ -1,0 +1,19 @@
+.gcm-menu-header {
+    &.mh-btns-right-4 .mh-btns-right { width: 160px; }
+
+    .tpl_mini_module {
+        h3 { display: none; }
+
+        p {
+            margin: 0;
+
+            a,
+            a:hover { color: $mmenu-color; }
+        }
+    }
+
+    .language {
+        position: absolute;
+        right: 0;
+    }
+}

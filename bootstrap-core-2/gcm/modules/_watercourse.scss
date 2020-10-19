@@ -1,0 +1,147 @@
+/* vodni toky - sloupec */
+.gcm-vertical-column,
+.gcm-horizontal-column {
+    .vodnitoky_mini {
+        & > select {
+            width: 100%;
+        }
+
+        .stanice_mini {
+            &.hidden2 {
+                @include sr-only;
+            }
+
+            .vyska_actual {
+                & > div {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    line-height: 22px;
+
+                    .d,
+                    .text {
+                        margin-bottom: 0;
+                    }
+
+                    .v {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 44px;
+                        padding-left: 10px;
+                        margin-bottom: 0;
+                        font-weight: 700;
+                        font-size: 1rem;
+                        line-height: 44px;
+                        background: #fff;
+
+                        &::after {
+                            @include gcm-fa-icon;
+
+                            width: 20px;
+                            margin-left: 10px;
+                            font-size: 14px;
+                            line-height: 44px;
+                            text-align: center;
+                            border-left: 1px solid $color-border;
+                        }
+                    }
+                }
+
+                .tend_up_-1 .v::after {
+                    content: "";
+                }
+
+                .tend_down_-1 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_-1 .v::after {
+                    content: "";
+                }
+
+                .tend_up_0 .v::after {
+                    content: "";
+                }
+
+                .tend_down_0 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_0 .v::after {
+                    content: "";
+                }
+
+                .tend_up_1 .v::after {
+                    content: "";
+                }
+
+                .tend_down_1 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_1 .v::after {
+                    content: "";
+                }
+
+                .tend_up_2 .v::after {
+                    content: "";
+                }
+
+                .tend_down_2 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_2 .v::after {
+                    content: "";
+                }
+
+                .tend_up_3 .v::after {
+                    content: "";
+                }
+
+                .tend_down_3 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_3 .v::after {
+                    content: "";
+                }
+
+                .tend_up_4 .v::after {
+                    content: "";
+                }
+
+                .tend_down_4 .v::after {
+                    content: "";
+                }
+
+                .tend_constant_4 .v::after {
+                    content: "";
+                }
+            }
+        }
+
+        .akt_stavy {
+            tr {
+                font-size: 14px;
+                line-height: 1;
+                background-color: transparent;
+
+                td {
+                    padding: 0;
+                }
+
+                th {
+                    padding: 0.75rem;
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

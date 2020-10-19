@@ -1,0 +1,36 @@
+@import "scss/settings/define";
+@import "scss/settings/define-modules";
+@import "scss/settings/fontawesome";
+@import "../bootstrap-core-2/bootstrap";
+@import "../bootstrap-core-2/gcm/mixins";
+@import "../bootstrap-core-2/gcm/type";
+
+body {
+    width: 765px;
+    font-size: $font-size-sm;
+    color: $color-text;
+    background: url(images/adm_body.gif) (765px - 1) 0 repeat-y;
+    background-color: $color-content-bg;
+
+    h2 {
+        font-size: $h2-font-size-sm;
+    }
+
+    h3 {
+        font-size: $h3-font-size-sm;
+    }
+
+    h4 {
+        font-size: $h4-font-size-sm;
+    }
+
+    &.cke_editable ul {
+        @include li-before;
+    }
+
+    table[border="1"] {
+        td {
+            border: 1px dotted $color-border;
+        }
+    }
+}

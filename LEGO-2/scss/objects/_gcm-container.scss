@@ -1,0 +1,17 @@
+.gcm-container {
+    @extend .container-lg;
+}
+
+.gcm-container--wide {
+    @media (min-width: $xxl) {
+        max-width: 1380px;
+    }
+
+    @media (min-width: $xxxl) {
+        max-width: 1600px;
+    }
+}
+
+.gcm-row {
+    @extend .row;
+}

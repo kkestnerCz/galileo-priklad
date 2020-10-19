@@ -1,0 +1,86 @@
+$rozcesti-bg: $btn-bg !default;
+$rozcesti-bg-opacity: 0.8 !default;
+$rozcesti-bg-hover: $btn-hover-bg !default;
+$rozcesti-color: $btn-color !default;
+$rozcesti-color-hover: $btn-hover-color !default;
+$rozcesti-mb: $default-margin !default;
+$rozcesti-border: none !default;
+$rozcesti-border-radius: $border-radius !default;
+$rozcesti-text-top: unset !default; //unset je pro dole 0 pro text nahore
+$rozcesti-text-align: center !default;
+$rozcesti-font-size: 18px !default;
+$rozcesti-centrovani: 18px !default;
+
+.crossings {
+    .card {
+        margin-bottom: $rozcesti-mb;
+        font-size: $rozcesti-font-size;
+        text-align: $rozcesti-text-align;
+        text-decoration: none;
+        border: $rozcesti-border;
+        cursor: pointer;
+
+        .card-img {
+            border-radius: $rozcesti-border-radius;
+        }
+
+        .card-body {
+            opacity: $rozcesti-bg-opacity;
+            padding: 1em;
+            border-radius: $rozcesti-border-radius;
+            background: $rozcesti-bg;
+
+            @extend .d-flex;
+
+            .card-text {
+                @extend .align-self-center;
+
+                width: 100%;
+
+                .card-link {
+                    text-align: $rozcesti-text-align;
+                    text-decoration: none;
+                    color: $rozcesti-color;
+                }
+            }
+
+            &:hover {
+                background: $rozcesti-bg-hover;
+
+                .card-link {
+                    text-decoration: none;
+                    color: $rozcesti-color-hover;
+                }
+            }
+        }
+
+        .card-img-overlay {
+            top: $rozcesti-text-top;
+            padding: 0;
+
+            .card-text {
+                opacity: $rozcesti-bg-opacity;
+                padding: 1em;
+                border-radius:
+                    0 0 $rozcesti-border-radius
+                    $rozcesti-border-radius;
+                background: $rozcesti-bg;
+
+                .card-link {
+                    text-decoration: none;
+                    color: $rozcesti-color;
+                }
+            }
+        }
+
+        &:hover {
+            .card-text {
+                background: $rozcesti-bg-hover;
+
+                .card-link {
+                    color: $rozcesti-color-hover;
+                }
+            }
+        }
+    }
+}

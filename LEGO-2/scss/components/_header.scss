@@ -1,0 +1,29 @@
+$header-bg: #fff !default;
+
+.gcm-header {
+    @extend .d-none;
+    @extend .d-sm-block;
+    @extend .d-print-none;
+    @extend .py-3;
+    @extend .px-3;
+
+    background: $header-bg;
+}
+
+.gcm-header__container {
+    //background: initial;
+}
+
+.gcm-header__row {
+    //background: initial;
+}
+
+.gcm-header__left {
+    @include make-col(8);
+}
+
+.gcm-header__right {
+    @extend .align-self-center;
+
+    @include make-col(4);
+}

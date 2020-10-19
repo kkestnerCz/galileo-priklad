@@ -1,0 +1,352 @@
+$events-border: 1px solid $color-body-bg !default;
+$events-border-hover: 1px solid $color-border !default;
+$events-name-hover-text-decoration: $link-hover-decoration !default;
+$events-color: $color-text !default;
+$events-bg: $color-body-bg !default;
+$events-bg-hover: $color-content-bg !default;
+$events-mb: $default-margin !default;
+
+.event-detail {
+    h2 > i,
+    .fa-calendar-plus.h2 {
+        color: $color-date;
+    }
+
+    .lead {
+        @include perex;
+
+        margin-bottom: $spacer * 3;
+    }
+
+    .highslide img {
+        border: 0;
+    }
+
+    .categories-list {
+        margin-bottom: $spacer * 3;
+    }
+
+    .flags {
+        margin-bottom: $spacer * 3;
+
+        .icon {
+            margin-right: $spacer * 2;
+            color: $color-date;
+        }
+
+        .event-flag-title {
+            @include sr-only;
+        }
+    }
+
+    .event-info,
+    .event-text,
+    .duration,
+    .organizer,
+    .opening-hours,
+    .address,
+    .price {
+        margin-bottom: $spacer * 3;
+    }
+
+    .event-gallery {
+        .card {
+            .card-img-overlay {
+                top: unset;
+                padding: 0;
+
+                .card-text {
+                    opacity: 0.8;
+                    padding: $spacer * 2;
+                    font-size: $font-size-base;
+                    color: $btn-color;
+                    border-radius: $rozcesti-border-radius;
+                    background: $rozcesti-bg;
+                }
+            }
+
+            &:hover .card-img-overlay {
+                display: none;
+            }
+        }
+    }
+
+    .event-files {
+        .file-details {
+            @include text-muted;
+
+            line-height: 1.4;
+        }
+
+        .icon {
+            position: relative;
+            bottom: 3px;
+            margin-right: 3px;
+            color: $color-date;
+
+            &::before {
+                @include gcm-fa-icon;
+                @include icon-size;
+
+                content: fa-content($fa-var-file);
+            }
+
+            &.pdf::before {
+                content: fa-content($fa-var-file-pdf);
+            }
+
+            &.doc::before {
+                content: fa-content($fa-var-file-word);
+            }
+
+            &.docx::before {
+                content: fa-content($fa-var-file-word);
+            }
+
+            &.xls::before {
+                content: fa-content($fa-var-file-excel);
+            }
+
+            &.xlsx::before {
+                content: fa-content($fa-var-file-excel);
+            }
+
+            &.jpg::before {
+                content: fa-content($fa-var-file-image);
+            }
+
+            &.png::before {
+                content: fa-content($fa-var-file-image);
+            }
+
+            &.zip::before {
+                content: fa-content($fa-var-file-archive);
+            }
+
+            &.xml::before {
+                content: fa-content($fa-var-file-code);
+            }
+
+            &.csv::before {
+                content: fa-content($fa-var-file-csv);
+            }
+        }
+    }
+
+    .text-muted {
+        @include text-muted;
+
+        line-height: 1.4;
+    }
+}
+
+.events {
+    &.events-messages,
+    .event-message,
+    &.events-catalog {
+        .event-link {
+            display: block;
+            margin-bottom: $events-mb;
+            text-decoration: none;
+            color: $events-color;
+            border: $events-border;
+            border-radius: $border-radius;
+            background: $events-bg;
+
+            .event-name {
+                @include link();
+            }
+
+            .event-date,
+            .action_date {
+                color: $color-date;
+            }
+
+            &:hover {
+                text-decoration: none;
+                border: $events-border-hover;
+                background: $events-bg-hover;
+
+                @include shadows;
+
+                .event-name {
+                    @include link-hover();
+                }
+            }
+        }
+
+        .event-perex,
+        .event-info {
+            display: none;
+        }
+    }
+
+    &.events-catalog {
+        .event-perex {
+            display: block;
+        }
+    }
+
+    &.events-gallery {
+        .card {
+            border: 0;
+
+            .card-img-top {
+                border-radius: $border-radius;
+            }
+
+            .card-img-overlay {
+                top: unset;
+                opacity: 0.8;
+                padding: $spacer * 2;
+                border-radius: 0 0 $border-radius $border-radius;
+                background: $btn-bg;
+
+                .card-title,
+                .card-text {
+                    margin-bottom: 5px;
+                    color: $btn-color;
+                }
+
+                .card-text {
+                    font-size: $font-size-base;
+                    text-align: right;
+                }
+            }
+
+            &:hover .card-img-overlay {
+                background: $btn-hover-bg;
+
+                .card-title,
+                .card-text {
+                    color: $btn-hover-color;
+                }
+            }
+        }
+    }
+}
+
+.catalog-form {
+    @include form;
+
+    .nav-pills {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .nav-link {
+        @extend .mr-0;
+        @extend .mb-1;
+
+        text-decoration: none;
+    }
+}
+
+.events-catalog {
+    .event.event-message {
+        .col.px-6 {
+            @extend .pl-3;
+        }
+
+        .col-5 {
+            @extend .pr-3;
+        }
+    }
+}
+
+.body_evts_akce {
+    .gcm-content .form {
+        @include form;
+
+        .btn.btn-primary {
+            margin-top: $spacer * 4;
+        }
+    }
+
+    .filtr_sett {
+        label {
+            margin-right: $spacer * 3;
+
+            &::after {
+                @include gcm-fa-icon;
+
+                margin-left: $spacer * 2;
+                color: $color-date;
+            }
+
+            &.no-barrier::after {
+                content: fa-content($fa-var-wheelchair);
+            }
+
+            &.pet-friendly::after {
+                content: fa-content($fa-var-dog-leashed);
+            }
+
+            &.baby-friendly::after {
+                content: fa-content($fa-var-users);
+            }
+        }
+    }
+
+    .gcm-content {
+        h1,
+        .event-detail h2 {
+            margin-bottom: $spacer * 3;
+        }
+    }
+
+    .event-message {
+        .action_date,
+        .venues {
+            & > i {
+                color: $color-date;
+            }
+        }
+
+        .flags {
+            .event-flag-title {
+                @include sr-only;
+            }
+
+            .icon {
+                &::after {
+                    @include gcm-fa-icon;
+
+                    margin-top: 10px;
+                    margin-right: $spacer * 2;
+                    color: $color-date;
+                }
+
+                &.icon-no-barrier::after {
+                    content: fa-content($fa-var-wheelchair);
+                }
+
+                &.icon-pet-friendly::after {
+                    content: fa-content($fa-var-dog-leashed);
+                }
+
+                &.icon-baby-friendly::after {
+                    content: fa-content($fa-var-users);
+                }
+            }
+        }
+    }
+}
+
+.event-message {
+    .col-8 {
+        &:first-of-type {
+            @include make-col(12);
+            @include prl-3;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .events.events-messages {
+        .event-perex,
+        .event-info {
+            display: block;
+        }
+    }
+}

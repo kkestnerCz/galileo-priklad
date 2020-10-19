@@ -1,0 +1,61 @@
+/* print_styles */
+@media print {
+    * {
+        font-size: 12pt !important;
+        color: black !important;
+        border-color: #fff !important;
+        background: #fff !important;
+        background-color: #fff !important;
+
+        &a,
+        &h1,
+        &h2,
+        &h3,
+        &h4,
+        &p,
+        *::before,
+        *::after {
+            color: black !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 14pt !important;
+
+            &.item_name {
+                color: black !important;
+            }
+        }
+    }
+
+    body {
+        a,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        *::before,
+        *::after,
+        .body_multipage .multipage .highlight {
+            color: black !important;
+        }
+
+        .higlight {
+            background: #fff !important;
+
+            a,
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            *::before,
+            *::after {
+                color: black !important;
+            }
+        }
+    }
+}

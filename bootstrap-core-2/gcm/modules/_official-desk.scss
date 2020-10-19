@@ -1,0 +1,33 @@
+/* uredni deska */
+
+[id="ur_form"] {
+    @include form();
+}
+
+.official-desk-list {
+    .item {
+        margin-bottom: $spacer * 3;
+
+        .item-electronic {
+            .icon {
+                &::after {
+                    @include gcm-fa-icon;
+
+                    content: fa-content($fa-var-passport);
+                    color: $color-date;
+                }
+            }
+        }
+
+        .item-heading {
+            @include h3-size;
+        }
+    }
+
+    .accordion {
+        .category .card-body {
+            padding: 0;
+        }
+    }
+}
+

@@ -1,0 +1,88 @@
+/* contacts */
+.contacts.person-detail {
+    img {
+        margin-bottom: $default-margin;
+    }
+}
+
+[id="kty_seznam_osob"] {
+    .lead {
+        @include perex;
+
+        margin-bottom: $default-margin;
+    }
+}
+
+.kty_form {
+    @include form;
+
+    .input-group.form-group {
+        margin-bottom: 16px;
+    }
+}
+
+.persons-list {
+    .person {
+        margin-bottom: $default-margin;
+
+        a h2 {
+            @include link-text;
+        }
+
+        img {
+            float: right;
+            margin-left: 20px;
+        }
+
+        @include clearfix;
+    }
+}
+
+/* detail osoby... */
+.contacts-subject-detail {
+    .perex,
+    .table-responsive,
+    .contacts,
+    .d-block:last-of-type {
+        margin-bottom: $default-margin;
+    }
+
+    .file-storage {
+        margin-top: $default-margin;
+    }
+
+    .contacts-address {
+        img {
+            float: right;
+        }
+    }
+
+    .persons {
+        h3 {
+            & + img {
+                float: right;
+                margin-left: 20px;
+            }
+
+            @include clearfix;
+        }
+    }
+}
+.contats-subject-tree {
+    .subject-note { margin-bottom: $default-margin;}
+    .subject-note:empty { margin-bottom: 0;}
+
+    ul ul {
+        a h2 { @include font-size-base; }
+
+        ul { margin-bottom: 0 !important; }
+    }
+
+    a h2 {
+        @include link;
+
+        margin-bottom: 0;
+
+        &:hover { @include link-hover; }
+    }
+}

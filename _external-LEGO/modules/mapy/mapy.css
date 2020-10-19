@@ -1,0 +1,810 @@
+/* CLASSES */
+.popup3{
+	font:80% Tahoma, Arial, Verdana, sans-serif;
+	padding:0;
+	margin:0;
+}
+.hidden{
+	display:none;
+}
+#mapcontent{
+	position:relative;
+}
+.clear, .cleaner{
+	clear:both;
+	font-size:1px;
+	height:1px;
+	margin-top:-1px;
+	overflow:hidden;
+}
+/* lista a zalozky */
+#map_control{
+	height:33px;
+	width:100%;
+	background-image:url(lista_bg.png);
+	position:relative;
+}
+#map_control #usr_conrtol,
+#map_control #usr_layers{
+	position:absolute;
+	top:5px;
+	right:5px;
+	z-index:49;
+	background-color:transparent;
+	width:350px;
+	height:26px;
+	overflow:hidden;
+	border:0;
+	font-size:0.9em;
+	text-align:right;
+}
+#map_control #usr_layers{
+	right:auto;
+	width:auto;
+	left:10px;
+	z-index:49;
+	text-align:left;
+}
+#map_control #usr_conrtol a.adm_btn,
+#map_control #usr_conrtol a.adm_btn_sel,
+#map_control #usr_layers a.adm_btn,
+#map_control #usr_layers a.adm_btn_sel{
+	color:#000;
+	display:block;
+	float:right;
+	height:21px;
+	padding:7px 6px 0;
+	margin:0 1px;
+	border-left:2px solid #000;
+	border-right:2px solid #000;
+	background-image:url(btn_bg.png);
+	text-decoration:none;
+	font-size:0.9em
+}
+#map_control #usr_conrtol #usr_help{
+	font-weight:bold;
+	background-image:url(btn_bg2.png);
+}
+#map_control #usr_conrtol a.adm_btn_sel,
+#map_control #usr_layers a.adm_btn_sel,
+#map_control #usr_conrtol a#usr_help.adm_btn_sel{
+	text-decoration:none;
+	background-image:url(btnsel_bg.png);
+	font-weight:bold;
+}
+#map_control #usr_layers a.adm_btn,
+#map_control #usr_layers a.adm_btn_sel{
+	float:left;
+}
+#mapcontent #usr_conrtol_content{
+	position:absolute;
+	top:30px;
+	right:10px;
+	z-index:49;
+	background-color:#EEE;
+	width:300px;
+	border:0;
+	padding:2px 0 2px 5px;
+	font-size:0.9em;
+}
+#mapcontent #usr_conrtol a.adm_btn,
+#mapcontent #usr_conrtol a.adm_btn_sel,
+#mapcontent #layer_conrtol a.adm_btn,
+#mapcontent #layer_conrtol a.adm_btn_sel{
+	background:transparent rgb(212,217,223);
+	height:1.1em;
+	padding:2px 5px;
+	border:outset 1px rgb(222,229,237);
+	text-decoration:none;
+	font-weight:bold;
+	font-size:0.9em;
+}
+#mapcontent #usr_conrtol a.adm_btn_sel,
+#mapcontent #layer_conrtol a.adm_btn_sel{
+	text-decoration:none;
+	border:inset 1px rgb(222,229,237);
+}
+/* tlacitka gps a mereni */
+#mapcontent #mapcontent_movecontrol{
+	position:absolute;
+	top:25px;
+	left:10px;
+	z-index:49;
+}
+#mapcontent #mapcontent_zoomcontrol{
+	position:absolute;
+	top:80px;
+	left:21px;
+	width:25px;
+	z-index:49;
+}
+#mapcontent #mapcontent_zoomcontrol a,
+#mapcontent #mapcontent_zoomcontrol img{
+	border:0;
+	margin:0;
+	padding:0;
+	display:block;
+}
+#mapcontent #mapcontent_gpscontrol{
+	position:absolute;
+	top:300px;
+	left:7px;
+	z-index:49;
+	width:55px;
+	height:22px;
+	border:0;
+}
+#mapcontent #mapcontent_measurecontrol{
+	position:absolute;
+	top:325px;
+	left:7px;
+	z-index:49;
+	width:55px;
+	height:22px;
+	border:0;
+}
+#mapcontent #mapcontent_gpscontrol a,
+#mapcontent #mapcontent_measurecontrol a{
+	display:block;
+	width:55px;
+	height:18px;
+	text-align:center;
+	padding-top:4px;
+	font-weight:bold;
+	text-decoration:none;
+	font-size:0.9em;
+	color:#0e7ece;
+}
+#mapcontent #mapcontent_gpscontrol a.adm_btn,
+#mapcontent #mapcontent_measurecontrol  a.adm_btn{
+	background:transparent url(button.png) no-repeat;
+	_background:transparent url(button.gif) no-repeat;
+}
+#mapcontent #mapcontent_gpscontrol a.adm_btn_sel,
+#mapcontent #mapcontent_measurecontrol a.adm_btn_sel{
+	background:transparent url(button_on.png) no-repeat;
+	_background:transparent url(button_on.gif) no-repeat;
+}
+/* mene vyrazna mapa */
+#map_control #usr_opacity{
+	position:absolute;
+	top:6px;
+	left:90px;
+	z-index:49;
+	color:white;
+	padding:0;
+	margin:0;
+}
+#map_control #usr_opacity input{
+	padding:0;
+	margin:0;
+	position:absolute;
+	top:2px;
+	left:0;
+	=top:-2px;
+}
+#map_control #usr_opacity label{
+	padding:0;
+	padding-left:17px;
+	=padding-left:23px;
+	margin:0;
+}
+/* ortofoto mapa */
+#map_control #usr_ortofoto{
+	position:absolute;
+	top:6px;
+	left:240px;
+	z-index:49;
+	color:white;
+	padding:0;
+	margin:0;
+}
+#map_control #usr_ortofoto input{
+	padding:0;
+	margin:0;
+	position:absolute;
+	top:2px;
+	left:0;
+	=top:-2px;
+}
+#map_control #usr_ortofoto label{
+	padding:0;
+	padding-left:17px;
+	=padding-left:23px;
+	margin:0;
+}
+/* katastralni mapa */
+#map_control #usr_katastr{
+	position:absolute;
+	top:6px;
+	left:330px;
+	z-index:49;
+	color:white;
+	padding:0;
+	margin:0;
+}
+#map_control #usr_katastr input{
+	padding:0;
+	margin:0;
+	position:absolute;
+	top:2px;
+	left:0;
+	=top:-2px;
+}
+#map_control #usr_katastr label{
+	padding:0;
+	padding-left:17px;
+	=padding-left:23px;
+	margin:0;
+}
+/* ajaxove zobrazovani loadu */
+#ajax_loading{
+	position:absolute;
+	top:2px;
+	right:5px;
+	z-index:100;
+}
+/* obsah zalozkek,globalni nastaveni */
+#mapcontent #usr_search_content,
+#mapcontent #usr_help_content,
+#mapcontent #usr_poi_content,
+#mapcontent #usr_route_content{
+	position:absolute;
+	top:-2px;
+	right:0;
+	_right:-1px;
+	z-index:49;
+	background:rgb(255,255,255);
+	width:290px;
+	border-left:2px solid black;
+	border-bottom:2px solid black;
+	border-right:2px solid black;
+	padding:24px 0 20px 15px;
+	font-size:0.9em;
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
+/* obsa zalozky trasy */
+#mapcontent #usr_trasy_content,
+#mapcontent #usr_trasy_konka_content{
+	position:absolute;
+	top:-2px;
+	left:0;
+	z-index:49;
+	background-color:rgb(255,255,255);
+	width:310px;
+	padding:3px 0 2px 5px;
+	font-size:0.9em;
+	border-left:2px solid black;
+	border-bottom:2px solid black;
+	border-right:2px solid black;
+}
+#mapcontent #usr_trasy_konka_content{
+	width:400px;
+}
+/* obsah zalozky vyhledavani */
+#mapcontent #usr_search_content .srch_input{
+	margin:0 5px 5px 5px;
+	line-height:2em;
+}
+#mapcontent #usr_search_content .srch_input .t{
+	width:200px;
+	vertical-align:middle;
+	font-size:1.2em;
+}
+#mapcontent #usr_search_content .srch_input .b{
+	color:rgb(21,147,236);
+	font-weight:bold;
+	padding:1px 4px 0 4px;
+	font-size:11px;
+	vertical-align:middle;
+}
+#mapcontent #usr_search_content .srch_info{
+	font-size:90%;
+	margin-left:6px;
+}
+#mapcontent #usr_search_content .srch_info a{
+	color:rgb(21,147,236);
+}
+#mapcontent_search{
+	max-height:414px;
+	_height:expression(this.scrollHeight>413?"414":"auto");
+	overflow:hidden;
+	overflow-y:auto;
+	position:relative;
+}
+#mapcontent_search .searchCtrlListHeader{
+	color:rgb(134,5,0);
+	margin:12px 0 2px 5px;
+}
+#mapcontent_search ul.searchCtrlList{
+	padding-left:5px;
+}
+#mapcontent_search ul.searchCtrlList a,
+#mapcontent_search .searchCtrlListControlls a{
+	font-size:0.9em;
+	color:rgb(21,147,236);
+}
+#mapcontent_search ul.searchCtrlList li{
+	color:rgb(21,147,236);
+	padding:2px 0;
+	margin-bottom:0;
+	position:relative;
+}
+#mapcontent_search ul.searchCtrlList li.selected{
+	background-color:rgb(100,191,255);
+	color:#fff;
+}
+#mapcontent_search ul.searchCtrlList li.selected a{
+	color:#fff;
+}
+#mapcontent #usr_search_content ul.searchCtrlList li.selected a:hover{
+	color:#fff;
+}
+#mapcontent #usr_search_content ul.searchCtrlList li a{
+	position:absolute;
+	left:18px;
+	top:1px;
+	=top:0;
+}
+#mapcontent div.searchCtrlResultNumTextHighlight{
+	overflow:hidden;
+	position:absolute;
+	left:4px;
+	top:4px;
+	width:29px;
+	height:15px;
+	color:#fff;
+	font-size:12px;
+	font-weight:800;
+	text-align:center
+}
+#mapcontent #usr_search_content ul.searchCtrlList li.selected div.searchCtrlResultNum{
+	background:transparent url(search_num_sel.gif) no-repeat;
+	color:#fff;
+}
+#mapcontent #usr_search_content ul.searchCtrlList li div.searchCtrlResultNum{
+	background:transparent url(search_num.gif) no-repeat;
+	padding:0;
+	color:black;
+	width:16px;
+	height:16px;
+	position:absolute;
+	line-height:16px;
+	top:1px;
+	left:0;
+}
+#mapcontent #usr_search_content ul.searchCtrlList li a.searchCtrlResultHref{
+	position:relative;
+	padding-left:18px;
+}
+#mapcontent div.searchCtrlResultNumText{
+	color:#000;
+}
+/* obsah zalozky napoveda */
+#mapcontent #usr_help_content a{
+	color:rgb(21,147,236);
+}
+#mapcontent #usr_help_content_menu{
+	margin-bottom:10px;
+}
+#mapcontent #usr_help_content h3{
+	font-size:1.1em;
+	margin-top:13px;
+}
+#mapcontent #usr_help_content h4{
+	color:rgb(134,5,0);
+	font-size:1em;
+}
+#mapcontent #usr_help_content_obsah{
+	max-height:431px;
+	=max-height:430px;
+	_height:expression(this.scrollHeight>428?"429":"auto");
+	overflow:hidden;
+	overflow-y:auto;
+	position:relative;
+}
+#mapcontent #usr_help_content_obsah img{
+	margin:5px 5px 5px 0
+}
+/* obsah zalozky turisticke cile */
+#mapcontent #usr_poi_content_box{
+	max-height:455px;
+	=max-height:454px;
+	_height:expression(this.scrollHeight>452?"453":"auto");
+	overflow-y:auto;
+	position:relative;
+	width:100%;
+}
+#mapcontent #usr_poi_content_box ul{
+	list-style-type:none;
+  margin:0;
+  padding:0;
+}
+#mapcontent #usr_poi_content_box ul li{
+	position:relative;
+	line-height:23px;
+	padding:2px 0;
+	color:rgb(134,5,0);
+	font-weight:bold;
+}
+#mapcontent #usr_poi_content_box ul ul{
+	padding:5px 0;
+}
+#mapcontent #usr_poi_content_box ul li li{
+	color:black;
+	font-weight:normal;
+	padding:0;
+}
+#mapcontent #usr_poi_content_box ul li img,
+#mapcontent #usr_poi_content_box ul li span.icon{
+	position:absolute;
+	left:18px;
+	=left:20px;
+}
+#mapcontent #usr_poi_content_box ul li input{
+  margin:0;
+  padding:0;
+}
+#mapcontent #usr_poi_content_box ul li label{
+	padding-left:30px;
+}
+#mapcontent #usr_poi_content_box ul li li input{
+	position:absolute;
+	left:12px;
+	top:6px;
+	=top:-3px;
+}
+#mapcontent #usr_poi_content_box ul li li label{
+	padding-left:30px;
+	=padding-left:33px;
+}
+#mapcontent #usr_poi_content_box ul li li img,
+#mapcontent #usr_poi_content_box ul li li span.icon{
+	margin:-5px;
+	position:static;
+	float:right;
+	margin-right:2px;
+}
+#mapcontent #usr_poi_content_box  .show_hide,
+#mapcontent #usr_poi_content_box  .hide_show{
+	float:right;
+	display:block;
+	width:9px;
+	height:9px;
+	background:transparent url(rozbal_1.gif) no-repeat;
+	margin:6px 9px 0 0;
+	_margin:4px 4px 0 0;
+}
+#mapcontent #usr_poi_content_box .hide_show{
+	background:transparent url(rozbal_2.gif);
+}
+/* obsah zalozky planovac tras */
+#mapcontent .routingCtrlDestBox{
+	width:100%;
+}
+#mapcontent #route_content_form a{
+	color:rgb(21,147,236);
+}
+#mapcontent #route_content_form .routingCtrlDestNum{
+	background-color:rgb(255,152,69);
+	font-size:11px;
+	height:20px;
+	overflow:hidden;
+	=margin-top:1px;
+	padding:0 0 0 0;
+	line-height:18px;
+}
+#mapcontent #route_content_form .routingCtrlDestSwitchBox{
+	background-color:rgb(255,152,69);
+	height:20px;
+	overflow:hidden;
+	padding:0;
+	=margin-top:1px;
+	=padding:1px 0 0 0;
+	=height:19px;
+}
+#mapcontent #route_content_form input.routingCtrlDestText{
+	height:20px;
+	width:210px;
+	border-top:1px solid rgb(133,133,133);
+	border-right:1px solid rgb(133,133,133);
+	border-bottom:1px solid rgb(133,133,133);
+	overflow:hidden;
+}
+#mapcontent #route_content_form .routingCtrlCriteriumSelect{
+	width:155px;
+}
+#mapcontent #route_content_form .routingCtrlSearchRouteButton{
+	color:rgb(21,147,236);
+	font-weight:bold;
+	margin:0;
+	padding:1px 0 0 0;
+	width:60px;
+	font-size:11px;
+}
+#mapcontent #usr_route_content #route_content_box{
+	max-height:455px;
+	=max-height:455px;
+	_height:expression(this.scrollHeight>453?"454":"auto");
+	overflow-y:auto;
+	overflow-x:hidden;
+	position:relative;
+	width:100%;
+}
+#mapcontent #route_content_result a{
+	color:rgb(21,147,236);
+}
+/* detail  textbox*/
+.mapy_detail img{
+	padding:0 5px 5px 0;
+}
+.mapy_detail .mapydet_menu a{
+	padding:0 10px;
+	color:white;
+	text-decoration:none;
+	border-right:1px solid rgb(139,202,245);
+	font-size:1.1em;
+}
+.mapy_detail .mapydet_menu a.last{
+	border-right:0;
+}
+.mapy_detail .mapydet_menu a.first{
+	padding:0 10px 0 0;
+}
+#mapcontent .mapy_detail h3{
+	margin:10px 0 6px;
+	font-size:1.6em;
+	color:rgb(135,7,6)
+}
+#mapcontent .mapy_detail .mapydet_hr_content{
+	background:transparent url(detail_hr.png) repeat-x;
+	height:1px;
+	margin-bottom:3px;
+}
+#mapcontent .mapy_detail .mapydet_detail_content,
+#mapcontent .mapy_detail .mapydet_gps_content,
+#mapcontent .mapy_detail .mapydet_otviraci_content,
+#mapcontent .mapy_detail .mapydet_trasa_content{
+	overflow:auto;
+	height:259px;
+	width:100%;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .popis,
+#mapcontent .mapy_detail .mapydet_detail_content .popis_pano,
+#mapcontent .mapy_detail .mapydet_detail_content .srch_adress,
+#mapcontent .mapy_detail .mapydet_gps_content{
+	font-size:1.2em;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .pano_obj{
+}
+#mapcontent .mapy_detail .mapydet_detail_content .popis_pano{
+	margin-top:3px;
+	width:195px;
+	height:77px;
+	overflow:hidden;
+	overflow-y:auto;
+	float:left;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech{
+	float:left;
+	width:158px;
+	overflow:hidden;
+	margin:2px 0 0 2px;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech td{
+	border-bottom:2px solid #fff;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .img{
+	width:20px;
+	height:20px;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .flash .img{
+	background:url(pano/flash.gif) no-repeat;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .java .img{
+	background:transparent url(pano/java.gif) no-repeat;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .quicktime .img{
+	background:transparent url(pano/quicktime.gif) no-repeat;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .img span{
+	 display:none;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .full a,
+#mapcontent .mapy_detail .mapydet_detail_content .tech .norm a{
+	background:url(pano/pano_fullscreen.gif) no-repeat scroll 1px 3px #EBEBEB;
+	border:1px solid #B0B0B0;
+	color:#141414;
+	display:block;
+	padding:3px 1px 3px 15px;
+	text-decoration:none
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .norm a{
+	background:url(pano/pano_normal.gif) no-repeat scroll 2px 3px #EBEBEB
+}
+#mapcontent .mapy_detail .mapydet_detail_content .tech .full a:hover,
+#mapcontent .mapy_detail .mapydet_detail_content .tech .norm a:hover,
+#mapcontent .mapy_detail .mapydet_detail_content .tech .norm a.sel{
+	color:#FFF;
+	background-color:#BCBCBC;
+	border:1px solid #717171;
+}
+#mapcontent .mapy_detail .mapydet_detail_content  .tech .nap a{
+	display:block;
+	width:14px;
+	height:20px;
+	background:transparent url(pano/nap.gif) no-repeat;
+}
+#mapcontent .mapy_detail .mapydet_detail_content  .tech .nap a span{
+	display:none;
+}
+#mapcontent .mapy_detail .mapydet_detail_content a{
+	color:rgb(7,94,163);
+	text-decoration:underline;
+}
+#mapcontent .mapy_detail .mapydet_detail_content a:hover{
+	text-decoration:none;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .popis .fotka{
+	float:left;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .popis .fotka img{
+	border:0;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .fotogalerie{
+	margin-bottom:0.5em;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .fotogalerie img{
+	border:0;
+	padding:0;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .fotogalerie .gl_item_ne_popis{
+	float:left;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .fotogalerie .gl_item_ne_popis .gl_prev{
+	display:inline;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .fotogalerie .counter{
+	display:none
+}
+#mapcontent .mapy_detail .mapydet_detail_content .adresa,
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty,
+#mapcontent .mapy_detail .mapydet_detail_content .prilohy{
+	font-size:1.2em
+}
+#mapcontent .mapy_detail .mapydet_detail_content .adresa h4,
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty h4,
+#mapcontent .mapy_detail .mapydet_gps_content h4,
+#mapcontent .mapy_detail .mapydet_otviraci_content h4,
+#mapcontent .mapy_detail .mapydet_detail_content .prilohy h4,
+#mapcontent .mapy_detail .mapydet_trasa_content h4{
+	padding:.5em 0 0;
+	margin:0;
+	font-size:1.1em;
+	font-weight:bold;
+	color:rgb(7,94,163)
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content h4{
+	position:relative;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content h4 a{
+	position:absolute;
+	right:2px;
+	color:#075EA3;
+	font-size:12px;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty h5{
+	font-size:1em;
+	color:rgb(7,94,163);
+	clear:both;
+	margin:0;
+	padding:0
+}
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty dl{
+	margin:0;
+	padding:0;
+	clear:both;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty dt{
+	float:left;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .kontakty dd{
+	padding-left:5px;
+	float:left;
+}
+#mapcontent .mapy_detail .mapydet_detail_content .evt_img{
+	float:left;
+	margin-right:4px;
+}
+#mapcontent .mapy_detail .mapydet_gps_content dl{
+	position:relative;
+}
+#mapcontent .mapy_detail .mapydet_gps_content dt{
+	position:absolute;
+	width:55px;
+}
+#mapcontent .mapy_detail .mapydet_gps_content dd{
+	padding-left:65px;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content,
+#mapcontent .mapy_detail .mapydet_trasa_content{
+	font-size:1.2em;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content table{
+	margin:10px 0 0 2em;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content table th{
+	color:rgb(7,94,163);
+	font-weight:normal;
+	padding:0 2px;
+	text-align:center;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content table td{
+	text-align:center;
+	padding:2px 5px !important;
+}
+#mapcontent .mapy_detail .mapydet_otviraci_content table td.den{
+	color:rgb(7,94,163);
+	text-align:right;
+	font-weight:normal;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form{
+	padding:1em 0 0 0.5em;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form p{
+	padding-top:0.8em;
+	width:270px;
+	position:relative;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form p.submit{
+	padding-top:0.5em;
+	text-align:right;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form label{
+	font-weight:bold;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form input{
+	position:absolute;
+	left:70px;
+	width:200px;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form p.submit span{
+	position:absolute;
+	left:70px;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form p.submit span a{
+	color:rgb(21,147,236);
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form p.submit input{
+	color:rgb(21,147,236);
+	font-weight:bold;
+	padding:1px 4px 0 4px;
+	font-size:11px;
+	vertical-align:middle;
+}
+#mapcontent .mapy_detail .mapydet_trasa_content form input.submit{
+	position:relative;
+	left:0;
+	width:auto
+}
+/* vyskovy profil */
+#route_content_profile_box{
+	background-color:rgb(255,255,255);
+	margin:0;
+	padding:0;
+	position:relative;
+}
+#route_content_profile_box #route_content_profile{
+	border-top:2px solid black;
+}
+#route_content_profile_box .close{
+	position:absolute;
+	top:4px;
+	right:4px;
+	background:#fff;
+	z-index:100;
+}
+#route_content_profile_box .close img{
+	border:0;
+}

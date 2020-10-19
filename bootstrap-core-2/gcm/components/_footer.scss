@@ -1,0 +1,48 @@
+$footer-logo-color: white !default;
+
+.gcm-footer {
+    @extend .px-1;
+    @extend .pt-4;
+    @extend .pb-3;
+    @extend .d-print-none;
+
+    font-size: $font-size-base;
+    line-height: 1.5;
+    text-align: center;
+    color: $footer-color;
+    background: $footer-bg;
+
+    p { @extend .mb-0;}
+
+    a {
+        text-decoration: $footer-a-text-decoration;
+        color: $footer-a-color;
+
+        &:hover {
+            text-decoration: none;
+            color: $footer-a-color;
+        }
+    }
+}
+
+.gcm-footer-left {
+    @extend .mb-3;
+    @extend .mb-md-0;
+    @extend .text-md-left;
+
+    margin-bottom: 1em;
+
+    img {
+        @include media-breakpoint-down(sm) { width: 50px; }
+    }
+}
+.gcm-footer-left__row { @extend .justify-content-center; }
+.gcm-footer-left__block { @extend .d-block; }
+.gcm-logo { fill: $footer-logo-color; }
+.gcm-footer-right { @extend .text-md-right; }
+
+.gcm-footer-right__gdpr {
+    a:last-of-type {
+        display: block;
+    }
+}

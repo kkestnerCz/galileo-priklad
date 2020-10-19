@@ -1,0 +1,62 @@
+.gcm-infobar {
+    @extend .d-none;
+    @extend .d-sm-block;
+    @extend .d-print-none;
+    @extend .py-1;
+    @extend .px-3;
+
+    background: $color-form-bg;
+
+    a {
+        text-decoration: none;
+        color: $color-link;
+
+        &:hover {
+            color: $color-hover;
+        }
+    }
+}
+
+.gcm-infobar__container {
+    //background: initial;
+}
+
+.gcm-infobar__row {
+    //background: initial;
+}
+
+.gcm-infobar__left {
+    @extend .d-flex;
+
+    @include make-col(8);
+}
+
+.gcm-infobar__right {
+    @extend .d-flex;
+    @extend .justify-content-end;
+    @extend .align-items-center;
+
+    @include make-col(4);
+}
+
+.gcm-infobar__ico {
+    @extend .mr-5;
+
+    &:last-child {
+        @extend .mr-0;
+    }
+}
+
+.sr-only-m {
+    @include media-breakpoint-down(sm) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}

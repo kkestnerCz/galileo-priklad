@@ -1,0 +1,158 @@
+//events
+$events-border: none; //1px solid $color-body-bg;
+$events-border-hover: none; //1px solid $color-border;
+$events-name-color: $link-color;
+$events-color: $color-text;
+$events-bg: $color-content-bg;
+$events-bg-hover: $color-content-bg;
+
+//date
+$date-border-radius: 0;
+$date-color-bg: $color-highlighting-bg;
+$date-color: $color-highlighting-text;
+$date-size: 95px;
+$date-border: none;
+$date-day-font-size: $h4-font-size-sm;
+$date-day-font-weight: $font-weight-bold;
+$date-day-bg: none;
+$date-day-color: $date-color;
+$date-year-font-size: $font-size-sm;
+$date-year-font-weight: $font-weight-normal;
+$date-year-bg: none;
+$date-year-color: $date-color;
+
+//mp-defaults
+$mp-title-font-weight: inherit;
+$mp-title-font-color: initial;
+$mp-title-font-size: 2.5em;
+$mp-content-color: inherit;
+$mp-border: 1px solid $color-border;
+$mp-border-radius: $border-radius;
+$mp-widget-mb: 30px;
+$mp-item-mb: 30px;
+
+//mp-events
+$mp-events-border: none; //$mp-border;
+$mp-events-border-radius: $mp-border-radius;
+$mp-events-item-date-color: $color-date;
+$mp-events-item-date-font-size: $font-size-base;
+$mp-events-item-date-font-weigt: $font-weight-normal;
+$mp-events-item-date-before-content: "";
+$mp-events-item-date-before-font-color: $color-date;
+$mp-events-item-date-before-font-mr: $spacer;
+$mp-events-item-name-color: $color-link;
+$mp-events-item-name-font-size: $h4-font-size;
+$mp-events-item-name-font-weight: $font-weight-bold;
+$mp-events-item-description-color: $color-text;
+$mp-events-bg: $color-content-bg;
+$mp-events-border-hover: none;
+$mp-events-bg-hover: $color-content-bg;
+
+//calendar
+$mp-calendar-heading-bg: $color-highlighting-bg;
+$mp-calendar-heading-color: $color-highlighting-heading;
+$mp-calendar-table-border: 1px solid $color-border;
+$mp-calendar-table-th-bg: $color-link;
+$mp-calendar-th-color: $mp-calendar-heading-color;
+$mp-calendar-table-th-font-weight: $font-weight-normal;
+$mp-calendar-table-td-font-weight: $font-weight-normal;
+$mp-calendar-table-body-bg: #eceeef;
+$mp-calendar-table-body-color: $color-text;
+$mp-calendar-month-bg: $mp-calendar-heading-color;
+$mp-calendar-month-color: #516164;
+$mp-calendar-today-bg: $color-hover;
+$mp-calendar-today-color: $mp-calendar-heading-color;
+$mp-calendar-action-bg: $mp-calendar-heading-color;
+$mp-calendar-action-color: $color-link;
+$mp-calendar-action-border: 1px solid $color-link;
+$mp-calendar-td-height: 35px;
+$mp-calendar-action-popover-color: $color-link;
+$mp-calendar-today-action-count-bg: $mp-calendar-today-color;
+$mp-calendar-today-action-count-color: $mp-calendar-today-bg;
+$mp-calendar-action-count-bg: $mp-calendar-action-color;
+$mp-calendar-action-count-color: $mp-calendar-action-bg;
+
+//names
+$mp-names-font-weight: $font-weight-bold;
+$mp-names-font-size: $font-size-base;
+$mp-names-border: none;
+$mp-names-border-radius: $mp-border-radius;
+$mp-names-padding: 17px 20px 13px;
+
+//sunrise-sunset
+$mp-sunrise-sunset-border: none;
+$mp-sunrise-sunset-border-radius: $mp-border-radius;
+$mp-sunrise-sunset-font-size: $font-size-base;
+
+//pocasi
+$mp-weather-border: none;
+$mp-weather-border-radius: $border-radius;
+$mp-weather-color: $color-text;
+$mp-weather-font-size: $font-size-base;
+$mp-weather-max-font-size: 20px;
+$mp-weather-description-font-size: 14px;
+$weather-cloud: #4d4d4d;
+$weather-water: #2388c8;
+$weather-sun: #e9c313;
+
+/* menu tabs */
+$nav-tabs-border-color: $color-border;
+$nav-tabs-border-radius: $border-radius;
+$nav-tabs-link-active-color: $btn-color;
+$nav-tabs-link-active-bg: $btn-hover-bg;
+$menu-tabs-text-decoration: none;
+$menu-tabs-bg: $btn-bg;
+$menu-tabs-color: $btn-color;
+$menu-tabs-border: 1px solid $btn-border;
+$menu-tabs-hover-border: 1px solid $btn-hover-border;
+$menu-tabs-hover-text-decoration: none;
+$menu-tabs-hover-color: $btn-hover-color;
+$menu-tabs-hover-bg: $btn-hover-bg;
+$menu-tabs-mr: $spacer;
+
+/* pagination */
+$pagination-color: $btn-color;
+$pagination-bg: $btn-bg;
+$pagination-border-color: $btn-bg;
+$pagination-hover-color: $btn-hover-color;
+$pagination-hover-bg: $btn-hover-bg;
+$pagination-hover-border-color: $btn-hover-bg;
+$pagination-active-color: $btn-hover-color;
+$pagination-active-bg: $btn-hover-bg;
+$pagination-active-border-color: $pagination-active-bg;
+$pagination-disabled-color: $color-text-muted;
+
+/* perex */
+$perex-border: 5px solid $color-hover;
+$perex-color: $color-text;
+$perex-bg: $color-form-bg;
+
+/* shadows */
+$box-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.15);
+
+/* rozcesti */
+$rozcesti-bg: $btn-bg;
+$rozcesti-bg-opacity: 0.8;
+$rozcesti-bg-hover: $btn-hover-bg;
+$rozcesti-color: $btn-color;
+$rozcesti-color-hover: $btn-hover-color;
+$rozcesti-mb: $default-margin;
+$rozcesti-border: none;
+$rozcesti-border-radius: $border-radius;
+$rozcesti-text-top: unset; //unset je pro dole 0 pro text nahore
+$rozcesti-text-align: center;
+$rozcesti-font-size: 18px;
+$rozcesti-centrovani: 18px;
+
+/* minitranslator */
+$translator-first-lang: 1; //cz-1 sk-9
+
+/* minitranslator2 - short */
+
+/*
+$gt-btn-color: #FFF;
+$gt-btn-color-hover: #991010;
+$gt-btn-font-weight: 700;
+$gt-btn-icons-font-weight: 900;
+$gt-btn-line-height: 1rem;
+*/

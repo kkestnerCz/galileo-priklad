@@ -1,0 +1,14 @@
+.gcm-info {
+    @extend .d-flex;
+    @extend .align-items-center;
+
+    background-color: $breadcrumb-bg;
+
+    .homepage & {
+        @include sr-only;
+    }
+}
+
+.gcm-navigation {
+    width: 100%;
+}

@@ -1,0 +1,117 @@
+$list-font-size: $font-size-base !default;
+
+tbody {
+    a {
+        @include link-text();
+    }
+}
+
+.editor,
+.editor_content {
+    word-break: break-word;
+
+    p,
+    li:not(:last-of-type){ margin-bottom: 12px; }
+    p + *:not(p) { margin-top: 24px; }
+
+    h2,
+    h3,
+    h4 { margin-bottom: 16px; }
+
+    h2 + h3,
+    h3 + h4 { margin-top: 24px; }
+
+    ul,
+    ol,
+    pre,
+    table { margin-bottom: 24px; }
+
+    hr { margin: 24px 0;}
+
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    .cleaner { @include clearfix; }
+
+    margin-bottom: $default-margin;
+}
+
+h1 + .editor_content { margin-top: 24px;}
+
+.editor,
+.official-desk-detail,
+.leftbox,
+.rightbox,
+.epodatelna,
+.pranostiky_box,
+.accordion .card .card-body,
+.editor_content {
+    ul:not(.list-group):not(.minievts):not(.jp-controls) {
+        @include li-before;
+    }
+}
+
+table {
+    @extend .table;
+    @extend .table-borderless;
+    @extend .table-striped;
+
+    thead {
+        @extend .thead-light;
+
+        a {
+            text-decoration: underline;
+            color: $color-highlighting-link;
+
+            &:hover {
+                text-decoration: none;
+                color: $color-highlighting-date;
+            }
+        }
+    }
+}
+
+.gdpr-anonymized {
+    color: $color-text;
+    background-color: $color-text;
+}
+
+.lead {
+    font-size: $font-size-sm;
+}
+
+/* Nastavenivelikosti zakladnich pisem na mobilu */
+@include media-breakpoint-up(md) {
+    body {
+        font-size: $font-size-sm;
+
+        h1,
+        .h1 {
+            font-size: $h1-font-size-sm;
+        }
+
+        h2,
+        .h2 {
+            font-size: $h2-font-size-sm;
+        }
+
+        h3,
+        .h3 {
+            font-size: $h3-font-size-sm;
+        }
+
+        h4,
+        .h4,
+        .lead {
+            font-size: $h4-font-size-sm;
+        }
+    }
+}
+/* Font Awesome srovnani font-weight */
+
+.fa {
+    font-weight: $fa-font-weight;
+    font-family: "Font Awesome 5 Pro";
+}

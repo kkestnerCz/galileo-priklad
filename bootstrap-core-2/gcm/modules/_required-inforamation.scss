@@ -1,0 +1,23 @@
+.povinne_informace {
+    .list-group-item {
+        border: none;
+    }
+
+    .contacts-block,
+    .perex {
+        margin-bottom: $default-margin;
+    }
+
+    .contats.contacts-subject-detail {
+        .contacts-address {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .persons {
+            .contacts {
+                margin-bottom: $default-margin;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.language {
+    @extend .dropdown;
+
+    .access {
+        display: none;
+    }
+
+    z-index: 1001;
+    display: inline;
+    padding: 15px;
+    background: transparent;
+
+    ul {
+        min-width: 1rem;
+        color: $color-highlighting-text;
+        background: $color-highlighting-bg;
+
+        li {
+            .act {
+                color: $color-highlighting-text;
+            }
+
+            a,
+            span {
+                @extend .dropdown-item;
+
+                color: $color-highlighting-text;
+
+                &:hover {
+                    color: $color-highlighting-text;
+                    background: $color-link;
+                }
+            }
+        }
+    }
+}

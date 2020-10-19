@@ -1,0 +1,30 @@
+.gdpr_consent {
+    form {
+        text-align: center;
+
+        .btn_submit {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-top: 0.5em;
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background-image: none;
+            cursor: pointer;
+        }
+
+        .btn_submit[value="Consent"] {
+            border-color: #4cae4c;
+            background: #5cb85c;
+        }
+
+        .btn_submit[value="ConsentNo"] {
+            border-color: #d43f3a;
+            background: #d9534f;
+        }
+    }
+}

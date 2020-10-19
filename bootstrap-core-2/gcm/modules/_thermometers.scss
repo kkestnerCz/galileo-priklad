@@ -1,0 +1,131 @@
+/* teplomer - sloupec */
+
+.temp_mini {
+    .hidden2 {
+        @include sr-only;
+    }
+
+    & > select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .teplomer_mini {
+        .t_actual {
+            position: relative;
+            font-size: 14px;
+            line-height: 22px;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .tend_up,
+            .tend_down,
+            .tend_constant {
+                margin-bottom: 5px;
+            }
+
+            .t {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 44px;
+                font-weight: $font-weight-bold;
+                font-size: $font-size-base;
+                background: #fff;
+
+                span {
+                    padding: 10px 5px;
+                    line-height: 44px;
+                }
+
+                &::after {
+                    @include gcm-fa-icon;
+
+                    width: 20px;
+                    font-size: 14px;
+                    line-height: 44px;
+                    text-align: center;
+                    border-left: 1px solid $color-border;
+                }
+            }
+
+            .tend_up .t::after {
+                content: "";
+            }
+
+            .tend_down .t::after {
+                content: "";
+            }
+
+            .tend_constant .t::after {
+                content: "";
+            }
+
+            .v_actual,
+            .r_actual {
+                line-height: 25px;
+                background: #fff;
+
+                .tend_up,
+                .tend_down,
+                .tend_constant {
+                    display: flex;
+                    justify-content: center;
+
+                    .text {
+                        margin-right: 5px;
+                    }
+                }
+
+                & > div::after {
+                    @include gcm-fa-icon;
+
+                    position: absolute;
+                    right: 0;
+                    width: 20px;
+                    line-height: 25px;
+                    text-align: center;
+                    border-left: 1px solid $color-border;
+                }
+
+                .tend_up::after {
+                    content: "";
+                }
+
+                .tend_down::after {
+                    content: "";
+                }
+
+                .tend_constant::after {
+                    content: "";
+                }
+            }
+
+            .v_actual {
+                border-bottom: 1px solid $color-border;
+            }
+
+            .r_actual {
+                margin-bottom: 5px;
+            }
+        }
+
+        .more {
+            margin-top: 10px;
+
+            .link_more {
+                @include button-primary;
+
+                display: block;
+                padding: 7px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+/* teplomer - modul */

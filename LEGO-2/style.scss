@@ -1,0 +1,68 @@
+/* settings */
+@import "scss/settings/define";
+@import "scss/settings/define-modules.scss";
+@import "scss/settings/fontawesome";
+
+/* core */
+@import "../bootstrap-core-2/bootstrap";
+@import "../bootstrap-core-2/extensions/hamburgers/hamburgers";
+@import "../bootstrap-core-2/extensions/mmenu/mmenu";
+@import "../bootstrap-core-2/gcm/mixins";
+@import "../bootstrap-core-2/gcm/components/menu-header";
+@import "../bootstrap-core-2/gcm/components/accordion";
+@import "../bootstrap-core-2/gcm/components/button";
+@import "../bootstrap-core-2/gcm/components/breadcrumb";
+@import "../bootstrap-core-2/gcm/modules/contacts";
+@import "../bootstrap-core-2/gcm/components/components";
+@import "../bootstrap-core-2/gcm/components/columns-modules";
+@import "../bootstrap-core-2/gcm/modules/crossings";
+@import "../bootstrap-core-2/gcm/modules/events";
+@import "../bootstrap-core-2/gcm/modules/file-storage";
+@import "../bootstrap-core-2/gcm/components/footer";
+@import "../bootstrap-core-2/gcm/components/fulltext";
+@import "../bootstrap-core-2/gcm/components/gdpr";
+@import "../bootstrap-core-2/gcm/components/headerfooter";
+@import "../bootstrap-core-2/gcm/components/lock-content";
+@import "../bootstrap-core-2/gcm/modules/required-inforamation";
+@import "../bootstrap-core-2/gcm/components/menu-tabs";
+@import "../bootstrap-core-2/gcm/components/multipage-widgets";
+@import "../bootstrap-core-2/gcm/modules/multipage";
+@import "../bootstrap-core-2/gcm/modules/official-desk";
+@import "../bootstrap-core-2/gcm/components/pagination";
+@import "../bootstrap-core-2/gcm/print";
+@import "../bootstrap-core-2/gcm/components/site-map";
+@import "../bootstrap-core-2/gcm/type";
+@import "../bootstrap-core-2/gcm/modules/weather-colored";
+
+/* editable */
+//@import "../bootstrap-core-2/gcm/modules/budget";	 /* rozklikavaci rozpocet */
+//@import "../bootstrap-core-2/gcm/modules/fso"; /* FSO - u SK webu povinny modul */
+//@import "../bootstrap-core-2/gcm/modules/panofoto";		/* panofotky */
+//@import "../bootstrap-core-2/gcm/modules/social-networks"; /* socialni sitě */
+//@import "../bootstrap-core-2/gcm/modules/thermometers"; /* teplomery */
+//@import "../bootstrap-core-2/gcm/modules/tendry";	/* verejne zakazky */
+//@import "../bootstrap-core-2/gcm/modules/tts"; /* tts, mluvene slovo */
+//@import "../bootstrap-core-2/gcm/modules/watercourse"; /* vodni - toky */
+
+/* objects */
+@import "scss/objects/content";
+@import "scss/objects/gcm-container";
+
+/* components */
+@import "scss/components/fulltext";
+@import "scss/components/print";
+@import "scss/components/infobar";
+@import "scss/components/language";
+@import "scss/components/header";
+@import "scss/components/crest";
+@import "scss/components/menu";
+//@import "../bootstrap-core-2/gcm/components/submenu-wide"; /* siroke submenu */
+@import "scss/components/slideshow";
+@import "scss/components/access";
+@import "scss/components/column-vertical";
+@import "scss/components/column-horizontal";
+@import "scss/components/submenu";
+@import "scss/components/mobile-header";
+@import "scss/components/card";
+@import "scss/components/links";
+@import "scss/components/info";

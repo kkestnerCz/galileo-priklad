@@ -1,0 +1,89 @@
+/* file storage */
+
+.file-storage:not(.contacts-block) {
+    h2 {
+        @include h3-size;
+    }
+}
+
+.file-storage-form {
+    @include form;
+
+    .form-control {
+        height: 100%;
+    }
+}
+
+.file-row {
+    h3 {
+        @include h4-size;
+    }
+
+    .link-small,
+    .file-name {
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .icon {
+        color: $color-date;
+
+        &::before {
+            @include gcm-fa-icon;
+            @include icon-size;
+
+            content: fa-content($fa-var-file);
+        }
+
+        &.pdf::before {
+            content: fa-content($fa-var-file-pdf);
+        }
+
+        &.doc::before {
+            content: fa-content($fa-var-file-word);
+        }
+
+        &.docx::before {
+            content: fa-content($fa-var-file-word);
+        }
+
+        &.xls::before {
+            content: fa-content($fa-var-file-excel);
+        }
+
+        &.xlsx::before {
+            content: fa-content($fa-var-file-excel);
+        }
+
+        &.jpg::before {
+            content: fa-content($fa-var-file-image);
+        }
+
+        &.png::before {
+            content: fa-content($fa-var-file-image);
+        }
+
+        &.zip::before {
+            content: fa-content($fa-var-file-archive);
+        }
+
+        &.xml::before {
+            content: fa-content($fa-var-file-code);
+        }
+
+        &.csv::before {
+            content: fa-content($fa-var-file-csv);
+        }
+    }
+
+    .file-details {
+        @include text-muted;
+
+        line-height: 1.4;
+
+        .date,
+        .download-count {
+            text-align: right;
+        }
+    }
+}

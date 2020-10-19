@@ -1,0 +1,426 @@
+$form-padding: 15px !default;
+$form-border: 1px solid $color-form-bg !default;
+$form-bg: $color-form-bg;
+
+$perex-border: 5px solid $color-hover !default;
+$perex-color: $color-text !default;
+$perex-bg: $color-form-bg !default;
+
+$date-border-radius: 0 !default;
+$date-color-bg: $color-highlighting-bg !default;
+$date-color: $color-highlighting-text !default;
+$date-size: 95px !default;
+$date-border: none !default;
+$date-day-font-size: $h4-font-size-sm !default;
+$date-day-font-weight: $font-weight-bold !default;
+$date-day-bg: none !default;
+$date-day-color: $date-color !default;
+$date-year-font-size: $font-size-sm !default;
+$date-year-font-weight: $font-weight-normal !default;
+$date-year-bg: none !default;
+$date-year-color: $date-color !default;
+$date-flex: none !default;
+
+$fa-font-weight: 900 !default;
+
+$list-before-mr: 0px !default;
+
+@mixin submenu-hover-active {
+    text-decoration: $submenu-hover-text-decoration;
+    color: $submenu-hover-color;
+    background: $submenu-hover-bg;
+}
+
+@mixin gcm-fa-icon {
+    @include fa-icon;
+
+    font-weight: $fa-font-weight !important;
+    font-family: "Font Awesome 5 Pro";
+}
+
+@mixin item-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: $date-size;
+    min-width: $date-size;
+    height: $date-size;
+    margin-bottom: 0;
+    text-align: center;
+    color: $date-color;
+    border: $date-border;
+    border-radius: $date-border-radius;
+    background: $date-color-bg;
+
+    .day-month {
+        flex: $date-flex;
+        font-weight: $date-day-font-weight;
+        font-size: $date-day-font-size;
+        color: $date-day-color;
+        background: $date-day-bg;
+    }
+
+    .year {
+        flex: $date-flex;
+        font-weight: $date-year-font-weight;
+        font-size: $date-year-font-size;
+        color: $date-year-color;
+        background: $date-year-bg;
+    }
+}
+
+@mixin li-before {
+    padding-left: 0;
+
+    li {
+        padding-left: 1em;
+        list-style: $list-style;
+
+        &::before {
+            content: fa-content($list-style-icon);
+            position: relative;
+            top: $list-before-top;
+            display: inline-block;
+            width: 1em;
+            margin-right: $list-before-mr;
+            margin-left: -1em;
+            font-weight: $list-before-weight;
+            font-size: $list-font-size;
+            font-family: "Font Awesome 5 Pro";
+            color: $list-before-color;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            display: inline-block;
+        }
+    }
+}
+
+@mixin calendar {
+    .cal-heading {
+        //border-right: 1px solid $mp-calendar-heading-bg;
+        //border-left: 1px solid $mp-calendar-heading-bg;
+        position: relative;
+        color: $mp-calendar-heading-color;
+        background: $mp-calendar-heading-bg;
+        //border-radius: $border-radius $border-radius 0 0;
+        .month {
+            margin-right: 7px;
+            line-height: 2.2;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            line-height: 2.2;
+            cursor: pointer;
+
+            span {
+                display: none;
+            }
+        }
+
+        .prev {
+            left: 15px;
+
+            &::before {
+                @include gcm-fa-icon;
+
+                content: fa-content($fa-var-caret-left);
+                font-size: 1.25rem;
+            }
+        }
+
+        .next {
+            right: 15px;
+
+            &::after {
+                @include gcm-fa-icon;
+
+                content: fa-content($fa-var-caret-right);
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .table {
+        margin-bottom: 0;
+
+        td,
+        th {
+            height: $mp-calendar-td-height;
+            padding: 0;
+            font-weight: $mp-calendar-table-td-font-weight;
+            vertical-align: middle;
+            border: $mp-calendar-table-border;
+        }
+
+        thead {
+            th {
+                font-weight: $mp-calendar-table-th-font-weight;
+                color: $mp-calendar-th-color;
+                background: $mp-calendar-table-th-bg;
+            }
+        }
+
+        tbody {
+            td {
+                color: $mp-calendar-table-body-color;
+                background: $mp-calendar-table-body-bg;
+            }
+
+            .action {
+                padding: 0;
+
+                a {
+                    position: relative;
+                    display: block;
+                    height: calc(#{$mp-calendar-td-height} - 1px);
+                    text-decoration: none;
+                    color: $mp-calendar-action-color;
+                    border: $mp-calendar-action-border;
+
+                    .actions-count {
+                        position: absolute;
+                        top: 4px;
+                        right: 4px;
+                        padding-right: 0.4rem;
+                        padding-left: 0.4rem;
+                        font-weight: 400;
+                        font-size: 11px;
+                        color: $mp-calendar-action-count-color;
+                        border-radius: 50%;
+                        background: $mp-calendar-action-count-bg;
+                    }
+                }
+            }
+
+            .month {
+                color: $mp-calendar-month-color;
+                background: $mp-calendar-month-bg;
+
+                &.today {
+                    color: $mp-calendar-today-color;
+                    background: $mp-calendar-today-bg;
+                }
+
+                &.today.action {
+                    background: $mp-calendar-today-bg;
+
+                    a {
+                        color: $mp-calendar-today-color;
+                    }
+
+                    .actions-count {
+                        width: 5px;
+                        height: 5px;
+                        padding: 0;
+                        color: $mp-calendar-today-action-count-color;
+                        border-radius: 50%;
+                        background: $mp-calendar-today-action-count-bg;
+
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.action {
+                    background: $mp-calendar-action-bg;
+                }
+            }
+        }
+    }
+
+    &.mini-width-4,
+    &.mini-width-3,
+    &.mini-width-2 {
+        .action a .actions-count {
+            width: 5px;
+            height: 5px;
+            padding: 0 !important;
+            border-radius: 50%;
+
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+@mixin calendar-actions-mini {
+    .multipage .mini-kalendar .calendar-mp .table tbody .action a .actions-count,
+    .table tbody .action a .actions-count {
+        width: 5px;
+        height: 5px;
+        padding-right: 0;
+        padding-left: 0;
+
+        span {
+            display: none;
+        }
+    }
+}
+
+@mixin smaller-headings {
+    h1,
+    .h1 {
+        font-size: $h1-font-size;
+    }
+
+    h2,
+    .h2 {
+        font-size: $h2-font-size;
+    }
+
+    h3,
+    .h3 {
+        font-size: $h3-font-size;
+    }
+
+    h4,
+    .h4 {
+        font-size: $h4-font-size;
+    }
+}
+
+@mixin font-size-base {
+    font-size: $font-size-base;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $font-size-sm;
+    }
+}
+
+@mixin mp-item_name-size {
+    font-size: calc(#{$h3-font-size + $h4-font-size} / 2);
+
+    @include media-breakpoint-up(sm) {
+        font-size: calc(#{$h3-font-size-sm + $h4-font-size-sm} / 2);
+    }
+}
+
+@mixin mrl-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+@mixin mrl--3 {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@mixin prl-0 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@mixin prl-3 {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+@mixin shadows {
+    box-shadow: $box-shadow;
+}
+
+@mixin icon-size {
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 2rem;
+    }
+}
+
+@mixin h2-size {
+    font-size: $h2-font-size;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $h2-font-size-sm;
+    }
+}
+
+@mixin h3-size {
+    font-size: $h3-font-size;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $h3-font-size-sm;
+    }
+}
+
+@mixin h4-size {
+    font-size: $h4-font-size;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $h4-font-size-sm;
+    }
+}
+
+@mixin text-muted {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+}
+
+@mixin link-text {
+    text-decoration: $link-decoration;
+    color: $link-color;
+
+    &:hover {
+        text-decoration: $link-hover-decoration;
+        color: $link-hover-color;
+    }
+}
+
+@mixin link {
+    text-decoration: $link-decoration;
+    color: $link-color;
+}
+
+@mixin link-hover {
+    text-decoration: $link-hover-decoration;
+    color: $link-hover-color;
+}
+
+@mixin form {
+    padding: $spacer * 3;
+    margin-bottom: $spacer * 4;
+    border: $form-border;
+    border-radius: $border-radius;
+    background: $color-form-bg;
+}
+
+@mixin perex {
+    padding: 4 * $spacer;
+    font-weight: $font-weight-normal;
+    color: $perex-color;
+    border-left: $perex-border;
+    background: $perex-bg;
+}
+
+/* button */
+$btn-text-decoration: none !default;
+$btn-hover-text-decoration: none !default;
+
+@mixin button-primary {
+    text-decoration: $btn-text-decoration;
+    color: $btn-color;
+    border: 1px solid $btn-border;
+    background: $btn-bg;
+
+    &:hover {
+        text-decoration: $btn-hover-text-decoration;
+        color: $btn-hover-color;
+        border: 1px solid $btn-hover-border;
+        background: $btn-hover-bg;
+    }
+}
+
+/*clearfix*/
+.cleaner {
+    @include clearfix;
+}

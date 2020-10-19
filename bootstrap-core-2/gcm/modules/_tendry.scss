@@ -1,0 +1,568 @@
+/* verejne zakazky */
+
+/* linky na prihlaseni a registraci */
+#tdr_guest {
+    margin: 0 -15px;
+}
+
+#tdr_guest .status_info {
+    margin: 30px;
+    font-weight: bold;
+}
+
+#tdr_guest input {
+    padding: 5px;
+}
+
+a.tdr_login_link,
+a.tdr_reg_link {
+    padding-left: 17px;
+}
+
+a.tdr_login_link {
+    background:
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhCQzNGNjMyNDE0NTExRTNBRUQ5Qzc1MUJBQjg1RENDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhCQzNGNjMzNDE0NTExRTNBRUQ5Qzc1MUJBQjg1RENDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEJDM0Y2MzA0MTQ1MTFFM0FFRDlDNzUxQkFCODVEQ0MiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEJDM0Y2MzE0MTQ1MTFFM0FFRDlDNzUxQkFCODVEQ0MiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7s81nvAAAAwklEQVR42mL8//8/Awj4+vpCGGhg8+bNjCCaCUksAos6uBhYYWJiIohaiUUhXIwJqIhx/vz52ExFsYExISEhBki7AxXHAt0JEoO5lVFERIQXSE8D4p0sQMIfzVq4SW/evPkMVLwRyAwHKbQG4jyoDzHcCnTaUSA1iYmBSABSeBRqKi4AkjsKUghygz/QCjF0FVAxkB82gty4FIhVgLgXKLERagPMJJCiuyA1jKAoBIUlkBMNlYA54yjUtqXAoPsPEGAAD/M4BQm4+WgAAAAASUVORK5CYII=)
+        no-repeat left;
+}
+
+a.tdr_reg_link {
+    margin-left: 20px;
+    background:
+        url(data:image/gif;base64,R0lGODlhCgAMAKIAAAAAAP///5SUlGBgYP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAKAAwAAAMaOLo88fCpGKe4OEwqHc4bZ32C5nAmmqJNmwAAOw==)
+        no-repeat left;
+}
+
+/* hlavni strana */
+
+/* zalozky */
+#tdr_guest .zak_tabs {
+    margin-top: 20px;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#tdr_guest .zak_tabs ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+#tdr_guest .zak_tabs ul li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#tdr_guest .zak_tabs ul li a {
+    display: block;
+    padding: 8px 5px;
+    margin-bottom: -1px;
+    text-decoration: none;
+    color: #313131;
+    border: 1px solid #bdbdbd;
+    background: #f4f3f3;
+}
+
+#tdr_guest .zak_tabs ul li a.current {
+    font-weight: bold;
+    color: #611709;
+    border-bottom-color: #f9f9f9;
+    background-color: #f9f9f9;
+}
+
+/* filtr */
+#tdr_guest .zak_panes .filter {
+    padding: 20px;
+    margin-bottom: 23px;
+    border: 1px solid #bdbdbd;
+    border-top: 0;
+    background: #f9f9f9;
+}
+
+#tdr_guest select#filtr_subject {
+    padding: 5px;
+    margin: 5px 0 7px 0;
+}
+
+#tdr_guest .zak_panes .filter form {
+    position: relative;
+}
+
+#tdr_guest .zak_panes .filter input#filtr_number,
+#tdr_guest .zak_panes .filter input#filtr_name {
+    border: 1px solid #bdbdbd;
+}
+
+#tdr_guest .zak_panes .filter label {
+    display: inline-block;
+    min-width: 180px;
+    padding-right: 10px;
+}
+
+/* tabulka zakazek */
+#tdr_guest .zak_panes > div.pane table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    overflow-y: hidden;
+    border-collapse: collapse;
+}
+
+#tdr_guest .zak_panes > div.pane table tr {
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#tdr_guest .zak_panes > div.pane table tr.vyh,
+#tdr_guest .zak_panes > div.pane .legend .vyh .box {
+    background: NavajoWhite;
+}
+
+#tdr_guest .zak_panes > div.pane table tr.vho,
+#tdr_guest .zak_panes > div.pane .legend .vho .box {
+    background: lavender;
+}
+
+#tdr_guest .zak_panes > div.pane table tr.av,
+#tdr_guest .zak_panes > div.pane .legend .av .box {
+    background: PaleGreen;
+}
+
+#tdr_guest .zak_panes > div.pane table tr.av td,
+#tdr_guest .zak_panes > div.pane table tr.vho td,
+#tdr_guest .zak_panes > div.pane table tr.vyh td {
+    background: none;
+}
+
+#tdr_guest .zak_panes > div.pane table th {
+    color: #000;
+    background-image: linear-gradient(black, black);
+    background-blend-mode: soft-light;
+}
+
+#tdr_guest .zak_panes > div.pane table td {
+    padding: 5px;
+}
+
+#tdr_guest .zak_panes > div.pane .legend {
+    margin: 30px 0;
+    text-align: left;
+}
+
+#tdr_guest .zak_panes > div.pane .legend .item {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#tdr_guest .zak_panes > div.pane .legend .item:last-of-type {
+    margin-right: 0;
+}
+
+#tdr_guest .zak_panes > div.pane .legend .item .box {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    vertical-align: middle;
+    border: 2px solid #bdbdbd;
+    border-radius: 50%;
+}
+
+#tdr_guest .zak_panes > div.pane .legend .item .hint {
+    display: inline-block;
+    padding-top: 2px;
+    vertical-align: middle;
+}
+
+#tdr_guest .zak_panes > div.pane {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#tdr_guest .zak_panes > div.pane .legend {
+    order: -1;
+}
+
+/* detail */
+
+.zak_detail h2 {
+    padding: 0;
+}
+
+.zak_detail ul {
+    padding: 0;
+    margin: 0;
+}
+
+#tdr_guest .zak_detail h4 {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.zak_detail .zadavatel_info .value {
+    font-weight: bold;
+}
+
+.zak_detail h3 {
+    margin-top: 30px;
+}
+
+.zak_detail .zadavatel_info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.zak_detail .zadavatel_info h4 a:hover {
+    text-decoration: underline;
+}
+
+.zak_detail .tender_parameters > li {
+    padding: 11px;
+    list-style-type: none;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.zak_detail .tender_parameters.bottom > li {
+    background: #eee;
+}
+
+.zak_detail .tender_parameters .value ul li {
+    list-style-type: disc;
+}
+
+.zak_detail .tender_parameters .value li {
+    margin-left: 25px;
+}
+
+.zak_detail .tender_parameters li.tdr_nazev {
+    font-weight: bold;
+    font-size: 120%;
+    background: #eee;
+}
+
+.zak_detail .tender_parameters > li > strong {
+    display: inline-block;
+    width: 30%;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.zak_detail .tender_parameters .value {
+    display: inline-block;
+    width: 68%;
+    padding-left: 2%;
+    vertical-align: top;
+}
+
+.zak_detail .tender_parameters.bottom strong {
+    width: 68%;
+    padding-right: 2%;
+}
+
+.zak_detail .tender_parameters.bottom .value {
+    width: 30%;
+    padding-left: 0;
+}
+
+/* soubory */
+#tdr_guest .zak_detail table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tdr_guest .zak_detail table tr > td {
+    padding: 5px 10px;
+    white-space: normal;
+}
+
+#tdr_guest .zak_detail table#files_tbl th {
+    padding: 8px 3px;
+    text-align: left;
+    border-bottom: 1px solid #bdbdbd;
+    background: #eee;
+}
+
+#tdr_guest .zak_detail table#files_tbl td {
+    border: 0;
+}
+
+#tdr_guest .zak_detail table#files_tbl td.file a {
+    display: block;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#tdr_guest .zak_detail table tr td.value {
+    padding-left: 15px;
+}
+
+/* detail subjektu */
+.zak_subject_detail .back_link {
+    margin-right: 20px;
+}
+
+.zak_subject_detail > fieldset {
+    margin-top: 10px;
+}
+
+#tdr_guest .zak_subject_detail table tr {
+    width: 100%;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#tdr_guest .zak_subject_detail table td {
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+#tdr_guest .zak_subject_detail table tr > td {
+    width: 180px;
+}
+
+#tdr_guest .zak_subject_detail table td.value {
+    font-weight: normal;
+}
+
+#tdr_guest .zak_subject_detail .subject_structure h3 {
+    margin-top: 30px;
+}
+
+#tdr_guest .zak_subject_detail .subject_structure .item.base {
+    font-weight: bold;
+}
+
+#tdr_guest .zak_subject_detail .subject_structure ul {
+    padding-left: 15px;
+}
+
+#tdr_guest .zak_subject_detail .subject_structure li {
+    list-style-type: none;
+}
+
+#tdr_guest .tree_list ul {
+    padding-bottom: 0;
+    margin-left: 3px;
+    background-color: transparent;
+}
+
+#tdr_guest .tree_list li {
+    height: auto;
+    padding: 0 0 0 10px;
+    list-style-type: none;
+
+    /* background:url(images/dis_line4.gif) no-repeat left 5px */
+}
+
+#tdr_guest .tree_list li .item {
+    padding: 2px 0;
+    margin: 0 0 0 3px;
+}
+
+#tdr_guest .tree_list li .item:hover {
+    background-color: transparent;
+}
+
+#tdr_guest .tree_list li .item > div {
+    display: inline-block;
+}
+
+#tdr_guest .contractor_categorie_wrapper > div {
+    display: block;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#tdr_guest .contractor_categorie_wrapper .tree_list li {
+    background-color: transparent;
+}
+
+#tdr_guest .contractor_categorie_wrapper .tree_list ul {
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+}
+
+#tdr_guest .contractor_categorie_wrapper .tree_list li .item .chbox {
+    padding: 0 3px;
+    margin-right: 10px;
+}
+
+#tdr_guest .infopage .info {
+    margin: 10px 0;
+}
+
+#tdr_guest .infopage .butt {
+    text-align: center;
+}
+
+/* otazky */
+#tdr_guest .zak_question dl {
+    margin-bottom: 10px;
+    border-top: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#tdr_guest .zak_question dt {
+    padding: 5px 10px;
+}
+
+#tdr_guest .zak_question dd {
+    padding: 5px 10px 5px 30px;
+}
+
+#tdr_guest .zak_question dt,
+#tdr_guest .zak_question dd {
+    background-color: #eee;
+}
+
+#tdr_guest .zak_question dt > span,
+#tdr_guest .zak_question dd > span {
+    display: block;
+}
+
+#tdr_guest .zak_question dd.noreply {
+    display: none;
+}
+
+#tdr_guest .zak_question .quest_head {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#tdr_guest p.question_text {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+#tdr_guest .tdr_reply_form p.btn {
+    margin-top: 10px;
+}
+
+#tdr_guest .tdr_logout .name {
+    font-weight: bold;
+}
+
+#tdr_guest .tdr_logout form {
+    display: inline-block;
+}
+
+/* LOGIN */
+
+.tdr_login,
+.registrace {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.tdr_login .back_link,
+.registrace .back_link {
+    order: 2;
+}
+
+.tdr_login input,
+.tdr_forgotten_pass_form input,
+#new_pass_form input {
+    border: 1px solid #b7b7b7;
+}
+
+.tdr_login #login_form,
+.tdr_pass_form,
+#new_pass_form {
+    position: relative;
+    padding: 20px;
+    margin: 5px 0 10px;
+    border: 1px solid #bdbdbd;
+}
+
+.tdr_login #login_form label,
+.tdr_forgotten_pass_form label,
+#new_pass_form label {
+    display: inline-block;
+    width: 90px;
+    margin-right: 10px;
+}
+
+#tdr_guest input.adm_btn {
+    position: relative;
+    top: -1px;
+    height: 31px;
+    padding: 0 10px;
+    color: #fff;
+    border: 0;
+    background: #314d04;
+}
+
+#tdr_guest input.adm_btn::-moz-focus-inner {
+    padding: 0;
+}
+
+.tdr_forgotten_pass_form #forgotten_pass_form {
+    margin-top: 15px;
+}
+
+/* REGISTRACE */
+
+.tdr_reg fieldset .form {
+    padding: 5px;
+}
+
+.tdr_reg fieldset label {
+    min-width: 180px;
+}
+
+.tdr_reg fieldset #contractor_form > div,
+.tdr_reg fieldset #contractor_form .newpsw_box > div,
+.tdr_reg fieldset #contractor_form .changepsw_box > div {
+    margin-bottom: 5px;
+}
+
+.tdr_reg fieldset #contractor_form .changepsw_box {
+    padding-left: 15px;
+    border-left: 1px solid black;
+}
+
+.highslide-container table {
+    background: #e9e9e9;
+}
+
+a.tdr_login_link,
+a.tdr_reg_link {
+    padding-left: 17px;
+}
+
+br.cleaner {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    a.tdr_login_link,
+    a.tdr_reg_link {
+        display: block;
+        margin: 0;
+    }
+
+    .zak_subject_detail .back_link {
+        display: block;
+    }
+
+    #tdr_guest input {
+        width: 100%;
+        border: 1px solid #aaa;
+    }
+
+    #tdr_guest .zak_panes .filter label,
+    .tdr_reg fieldset label {
+        margin-top: 15px;
+    }
+
+    #tdr_guest select#filtr_subject {
+        margin-top: 0;
+    }
+
+    .body_poptavky .highslide-container table,
+    .highslide-container div {
+        max-width: 300px;
+    }
+}

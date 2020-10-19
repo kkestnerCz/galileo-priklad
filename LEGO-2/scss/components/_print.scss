@@ -1,0 +1,13 @@
+[id="print_show"] {
+    a {
+        &::before {
+            @include gcm-fa-icon;
+
+            content: fa-content($fa-var-print);
+        }
+    }
+
+    img {
+        display: none;
+    }
+}

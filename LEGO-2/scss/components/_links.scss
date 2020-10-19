@@ -1,0 +1,50 @@
+.gcm-links {
+    @extend .d-none;
+    @extend .d-print-none;
+
+    .homepage & {
+        @extend .d-sm-block;
+    }
+}
+
+.gcm-links__container {
+    //background: initial;
+}
+
+.gcm-links__nav {
+    @extend .nav-fill;
+}
+
+.gcm-links__item {
+    flex: 1 1 100% !important;
+
+    @include media-breakpoint-up(sm) {
+        flex: 1 1 50% !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+        flex: 1 1 25% !important;
+    }
+}
+
+.gcm-links__link {
+    @extend .d-flex;
+    @extend .align-items-center;
+
+    height: 100px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+
+    &:hover {
+        color: #000;
+        background: #fff;
+    }
+}
+
+.gcm-links__ico {
+    @extend .mr-4;
+
+    font-size: 40px;
+}

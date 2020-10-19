@@ -1,0 +1,44 @@
+.pagination {
+    .page-item {
+        display: flex;
+
+        .first-item,
+        .previous-item,
+        .next-item,
+        .last-item {
+            span {
+                display: none;
+            }
+        }
+
+        .page-link {
+            text-decoration: none;
+
+            span {
+                &::before {
+                    @include gcm-fa-icon;
+                }
+
+                &.first-item::before {
+                    content: fa-content($fa-var-angle-double-left);
+                }
+
+                &.previous-item::before {
+                    content: fa-content($fa-var-angle-left);
+                }
+
+                &.next-item::before {
+                    content: fa-content($fa-var-angle-right);
+                }
+
+                &.last-item::before {
+                    content: fa-content($fa-var-angle-double-right);
+                }
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

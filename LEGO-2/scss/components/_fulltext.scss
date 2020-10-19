@@ -1,0 +1,97 @@
+.tpl_mini_fulltext {
+    .access,
+    label,
+    a {
+        display: none;
+    }
+}
+
+.fulltext-mini {
+    form {
+        justify-content: flex-end;
+
+        @include media-breakpoint-up(md) {
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 100%;
+                z-index: -1;
+                height: 4px;
+                background: $color-link;
+                transition-property: left;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-out;
+            }
+
+            &:hover::before,
+            &:focus::before,
+            &:active::before {
+                left: 0;
+                z-index: 10;
+            }
+        }
+
+        input,
+        button {
+            border-radius: $border-radius;
+            background: transparent;
+        }
+
+        input {
+            display: none;
+            border: 1px solid $color-border;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            @include media-breakpoint-up(md) {
+                display: initial;
+            }
+
+            &::placeholder {
+                font-style: italic;
+                color: $color-text-muted;
+            }
+        }
+
+        button {
+            border: none;
+
+            @include media-breakpoint-up(md) {
+                border: 1px solid $color-border;
+                border-left: none;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &:hover {
+                background: transparent;
+
+                @include media-breakpoint-up(md) {
+                    border: 1px solid $color-border;
+                    border-left: none;
+                }
+            }
+
+            .icon {
+                &::before {
+                    @include gcm-fa-icon;
+
+                    content: fa-content($fa-var-search);
+                    font-size: 19px;
+                    color: $color-link;
+                }
+
+                &:hover::before {
+                    color: $color-hover;
+                }
+            }
+
+            .button-text {
+                @include sr-only;
+            }
+        }
+    }
+}

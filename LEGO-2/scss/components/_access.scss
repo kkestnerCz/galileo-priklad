@@ -1,0 +1,24 @@
+.access {
+    padding: $columns-h3-padding;
+    margin-bottom: 0;
+    font-weight: $columns-h3-weight;
+    font-size: $columns-h3-size;
+    font-family: $columns-h3-family;
+    text-decoration: $columns-h3-text-decoration;
+    text-transform: $columns-h3-text-transform;
+    color: $columns-h3-color;
+    border-bottom: $columns-h3-border;
+    border-radius: $columns-border-radius $columns-border-radius 0 0;
+    background: $columns-h3-bg;
+
+    &::before {
+        @include gcm-fa-icon;
+
+        content: fa-content($columns-h3-before-fa-icon);
+        position: relative;
+        bottom: $columns-h3-before-bottom;
+        margin-right: $columns-h3-before-mr;
+        font-size: $columns-h3-before-size;
+        color: $columns-h3-before-color;
+    }
+}

@@ -1,0 +1,222 @@
+@import url("//fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=latin-ext");
+@import url("//fonts.googleapis.com/css?family=Roboto+Slab:400,400i,700,700i&display=swap&subset=latin-ext");
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../bootstrap-core-2/extensions/fontawesome/_variables";
+
+$enable-rounded: false;
+$border-radius: 0;
+$default-margin: 30px;
+
+/* main colors */
+$color-text: #4d4d4d;
+$color-heading: #000;
+$color-link: #f05;
+$color-hover: #7700b3;
+$color-date: #f00;
+$color-text-muted: #808080;
+$color-form-bg: #f2f2f2;
+$color-border: #ccc;
+$color-content-bg: #fff;
+$color-body-bg: #d9d9d9;
+
+$color-highlighting-bg: #333;
+$color-highlighting-text: #fff;
+$color-highlighting-heading: #fff;
+$color-highlighting-link: #f05;
+$color-highlighting-date: #00c2ff;
+
+/* fonts */
+$font-family-base: "Roboto", sans-serif;
+$headings-font-family: "Roboto Slab", sans-serif;
+$fa-font-path: "https://static.gc-system.cz/fa5pro/webfonts";
+$fa-font-weight: 400; //defaultni nastevni font-weight pro Font Awesome 300 -- 400 -- 900
+$font-size-base: 1rem;
+$font-size-sm: 1.125rem;
+$line-height-base: 1.5;
+
+$headings-color: $color-heading;
+$headings-font-weight: 700;
+
+$h4-font-size: $font-size-base + 0.125rem;
+$h3-font-size: $h4-font-size + 0.25rem;
+$h2-font-size: $h3-font-size + 0.25rem;
+$h1-font-size: $h2-font-size + 0.25rem;
+
+$h4-font-size-sm: $font-size-sm + 0.125rem;
+$h3-font-size-sm: $h4-font-size-sm + 0.25rem;
+$h2-font-size-sm: $h3-font-size-sm + 0.25rem;
+$h1-font-size-sm: $h2-font-size-sm + 0.25rem;
+
+/* prevodni tabulka BS->GCM */
+$body-bg: $color-body-bg;
+$body-color: $color-text;
+$container-bg: $color-body-bg;
+$border-color: $color-border;
+$card-border-color: $border-color;
+$text-muted: $color-text-muted;
+$progress-bg: $color-form-bg;
+$progress-bar-bg: $color-hover;
+$card-cap-bg: $color-form-bg;
+$card-border-color: $color-border;
+$card-bg: $color-content-bg;
+
+/* links */
+$link-color: $color-link;
+$link-decoration: underline;
+$link-hover-color: $color-hover;
+$link-hover-decoration: none;
+
+/* typografie */
+//tabulka
+$table-bg: transparent;
+$table-accent-bg: $color-form-bg;
+$table-border-color: $color-border;
+$table-head-bg: $color-highlighting-bg;
+$table-head-color: $color-highlighting-heading;
+
+$list-style: none;
+$list-style-icon: "";
+$list-before-weight: $font-weight-normal;
+$list-before-top: 0;
+$list-before-mr: 0;
+$list-before-color: $link-color;
+$list-font-size: $font-size-base;
+
+/* button */
+$btn-bg: #d500ff;
+$btn-color: #fff;
+$btn-border: $btn-bg;
+$btn-hover-bg: #1e00b3;
+$btn-hover-color: $btn-color;
+$btn-hover-border: $btn-hover-bg;
+
+/* header */
+$header-title-family: $font-family-base;
+$header-title-weight: $font-weight-bold;
+
+/* mmenu */
+$mmenu-bg: #333;
+$mmenu-color: #fff;
+$hamburger-layer-color: $mmenu-color;
+
+/* columns */
+$columns-bg: #eceeef !default;
+$columns-border: none; //1px solid $color-border!default;
+$columns-border-radius: $border-radius !default;
+$columns-mb: 30px !default;
+$columns-vertical-position: left; // left/right pozice vertikálního sloupce
+$columns-vertical-homepage: false; // true/false vertikální sloupec na homepage
+$columns-horizontal-bg: #fff;
+$columns-horizontal-equal: true; // true/false stejná výška horizontálních sloupců
+
+$columns-h3-color: #000 !default;
+$columns-h3-size: 1.125rem !default;
+$columns-h3-family: inherit !default;
+$columns-h3-weight: bold !default;
+$columns-h3-text-decoration: none !default;
+$columns-h3-border: 1px solid $color-border !default;
+$columns-h3-padding: 0.75em !default;
+$columns-h3-bg: $columns-bg !default;
+$columns-h3-text-transform: none !default;
+
+$columns-h3-before-fa-icon: "" !default;
+$columns-h3-before-mr: 12px !default;
+$columns-h3-before-color: #666 !default;
+$columns-h3-before-size: initial !default;
+$columns-h3-before-bottom: 0.1em !default;
+$columns-bg-border: none !default;
+$columns-bg-radius: $columns-border-radius !default;
+
+/* slideshow */
+$slideshow-width: 100%;
+$slideshow-height-HP: 400; //homepage
+$slideshow-height: 200;
+$swiper-text-color: #fff;
+$swiper-text-bg: black;
+
+/* breadcrumb */
+$breadcrumb-bg: $color-body-bg;
+$breadcrumb-divider-color: $color-date;
+$breadcrumb-active-color: $color-link;
+$breadcrumb-active-font-weight: 700;
+$breadcrumb-color: $color-link;
+$breadcrumb-divider: fa-content($fa-var-chevron-right);
+$breadcrumb-font-size: $font-size-base;
+$breadcrumb-a-text-decoration: underline;
+$breadcrumb-home-font-weight: 400;
+
+/* headerfooter */
+$headerfooter-bg: #000;
+$headerfooter-color: #fff;
+$headerfooter-a-color-hover: $headerfooter-color;
+$headerfooter-title-color: $headerfooter-color;
+$headerfooter-title-font-size: 1.5em;
+$headerfooter-title-font-weight: $font-weight-bold;
+$headerfooter-title-font-ml: 0;
+$headerfooter-title-mb: 0.5rem;
+$headerfooter-title-text-decoration: none;
+$headerfooter-box: 25%;
+
+$headerfooter-list-style: none;
+$headerfooter-a-color: $headerfooter-color;
+$headerfooter-a-line-height: 2;
+$headerfooter-a-before-contetnt: $fa-var-angle-right;
+$headerfooter-a-before-mr: 10px;
+$headerfooter-a-before-top: 10px;
+
+/* footer */
+$footer-bg: #333;
+$footer-color: #fff;
+$footer-logo-color: $footer-color;
+$footer-a-color: $footer-color;
+$footer-a-text-decoration: underline;
+
+/* print */
+$print-page-size: auto;
+
+/* spacing */
+$spacer: 5px;
+$spacers: (
+    0: 0,
+    1: $spacer,
+    2: (
+        $spacer * 2,
+    ),
+    3: (
+        $spacer * 3,
+    ),
+    4: (
+        $spacer * 4,
+    ),
+    5: (
+        $spacer * 5,
+    ),
+    6: (
+        $spacer * 6,
+    ),
+    7: (
+        $spacer * 7,
+    ),
+    8: (
+        $spacer * 8,
+    ),
+    9: (
+        $spacer * 9,
+    ),
+    10: (
+        $spacer * 10,
+    ),
+);
+
+/* breakpoints */
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+
+$xxl: 1440px;
+$xxxl: 1660px;

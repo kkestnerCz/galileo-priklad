@@ -1,0 +1,41 @@
+$header-title-color: #000 !default;
+$header-title-size: 38px !default;
+$header-title-family: $font-family-base !default;
+$header-title-weight: $font-weight-bold !default;
+
+$header-title-pre-color: #991010 !default;
+$header-title-pre-size: 28px !default;
+$header-title-pre-family: $font-family-base !default;
+$header-title-pre-weight: $font-weight-normal !default;
+
+.gcm-crest {
+    @extend .d-flex;
+    @extend .align-items-end;
+
+    text-decoration: none;
+}
+
+.gcm-crest__img {
+    @extend .img-fluid;
+
+    width: 70px;
+    height: auto;
+}
+
+.gcm-crest__title {
+    @extend .ml-3;
+
+    font-weight: $header-title-weight;
+    font-size: $header-title-size;
+    font-family: $header-title-family;
+    color: $header-title-color;
+}
+
+.gcm-crest__title--pre {
+    @extend .mr-2;
+
+    font-weight: $header-title-pre-weight;
+    font-size: $header-title-pre-size;
+    font-family: $header-title-pre-family;
+    color: $header-title-pre-color;
+}

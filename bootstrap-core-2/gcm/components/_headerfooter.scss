@@ -1,0 +1,97 @@
+$headerfooter-a-before-top: 4px !default;
+$headerfooter-a-color-hover: $headerfooter-a-color !default;
+$headerfooter-box: 25% !default; /* 25%!default; 25% pro 4 boxy, 33.33% pro 3 boxy */
+$headerfooter-title-mb: 0.5rem !default;
+.gcm-headerfooter {
+    @extend .pt-3;
+    @extend .d-print-none;
+
+    color: $headerfooter-color;
+    background: $headerfooter-bg;
+
+    ul.box {
+        @include make-row();
+
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    li.box {
+        @include make-col(12);
+
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 1em;
+        list-style: $headerfooter-list-style !important;
+
+        .title {
+            margin-left: $headerfooter-title-font-ml;
+            font-weight: $headerfooter-title-font-weight;
+            font-size: $headerfooter-title-font-size;
+            text-decoration: $headerfooter-title-text-decoration;
+            color: $headerfooter-title-color;
+
+            .content_li:not(:empty) {
+                margin-bottom: $headerfooter-title-mb;
+            }
+        }
+
+        .content_li {
+            ul {
+                padding-left: 0;
+            }
+
+            a {
+                color: $headerfooter-a-color;
+
+                &:hover {
+                    color: $headerfooter-a-color-hover;
+                }
+            }
+
+            li {
+                display: flex;
+                list-style: $headerfooter-list-style;
+
+                a {
+                    line-height: $headerfooter-a-line-height;
+                    color: $headerfooter-a-color;
+
+                    &:hover {
+                        color: $headerfooter-a-color-hover;
+                    }
+                }
+
+                &::before {
+                    @include gcm-fa-icon;
+
+                    content: fa-content($headerfooter-a-before-contetnt);
+                    position: relative;
+                    top: $headerfooter-a-before-top;
+                    display: inline-block;
+                    margin-right: $headerfooter-a-before-mr;
+                }
+            }
+        }
+
+        &.last {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .gcm-headerfooter li.box {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .gcm-headerfooter li.box {
+        flex: 0 0 $headerfooter-box;
+        max-width: $headerfooter-box;
+    }
+}

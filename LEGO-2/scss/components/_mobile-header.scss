@@ -1,0 +1,51 @@
+$mheader-bg: wheat;
+$mheader-title: 1.875rem;
+$mheader-title-color: $headings-color;
+$mheader-title-weight: $header-title-weight;
+$mheader-pre: 1.875rem;
+$mheader-pre-color: $headings-color;
+$mheader-pre: $mheader-title;
+$mheader-pre-weight: $mheader-title-weight;
+$mheader-title-family: $header-title-family;
+
+.gcm-mobile-header {
+    @extend .d-block;
+    @extend .d-sm-none;
+    @extend .d-print-none;
+    @extend .py-4;
+
+    min-width: 90px;
+    background: $mheader-bg;
+}
+
+.gcm-mobile-crest {
+    @extend .d-flex;
+
+    align-items: center;
+    text-decoration: none !important;
+}
+
+.gcm-mobile-crest__img {
+    width: 50px;
+    height: auto;
+}
+
+.gcm-mobile-crest__title {
+    @extend .d-inline;
+    @extend .ml-3;
+
+    font-weight: $mheader-title-weight;
+    font-size: $mheader-title;
+    font-family: $mheader-title-family;
+    color: $mheader-title-color;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.gcm-mobile-crest__title--pre {
+    font-weight: $mheader-pre-weight;
+    font-size: $mheader-pre;
+    color: $mheader-pre-color;
+}

@@ -1,0 +1,93 @@
+/* minitranslator */
+$gt-btn-color: #fff !default;
+$gt-btn-color-hover: #ffdc32 !default;
+$gt-btn-font-weight: 700 !default;
+$gt-btn-icons-font-weight: 900 !default;
+$gt-btn-line-height: 1rem !default;
+
+body {
+    top: 0 !important;
+}
+
+.gt-language {
+    margin: auto 0;
+
+    .btn {
+        display: flex;
+        padding: 0;
+        font-weight: $gt-btn-font-weight;
+        line-height: $gt-btn-line-height;
+        color: $gt-btn-color;
+        border: none;
+        background-color: transparent;
+
+        @include media-breakpoint-up(sm) {
+            &:hover {
+                color: $gt-btn-color-hover;
+            }
+        }
+
+        &::before,
+        &::after {
+            @include gcm-fa-icon;
+        }
+
+        &::before {
+            content: "\f57c";
+            margin-right: 10px;
+
+            @include media-breakpoint-up(xl) {
+                font-size: 24px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                @include sr-only;
+            }
+        }
+
+        &::after {
+            content: "\f107";
+            width: auto;
+            height: auto;
+            margin-left: 10px;
+            border: none;
+        }
+    }
+
+    .gt-language-list {
+        right: 0 !important;
+        left: auto !important;
+        transform: translate3d(0, 16px, 0) !important;
+
+        &.show {
+            top: 14px !important;
+        }
+
+        .lang-select {
+            font-size: 1em !important;
+            line-height: 1.5;
+            text-decoration: none;
+            color: #323232 !important;
+            border-bottom: 1px solid #d6d6d6;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .flag {
+                margin-right: 5px;
+                margin-bottom: 2px;
+            }
+
+            @media (min-width: 575.98px) {
+                line-height: initial !important;
+            }
+        }
+    }
+}
+
+/* panel dole */
+.goog-te-banner-frame {
+    top: auto !important;
+    bottom: 0;
+}

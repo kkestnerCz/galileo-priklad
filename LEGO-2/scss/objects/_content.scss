@@ -1,0 +1,63 @@
+$container-bg: $color-body-bg !default;
+$content-bg: $color-content-bg !default;
+
+// podklad obsahu i sloupce
+.gcm-main-container {
+    border-radius: $border-radius;
+    background: $container-bg;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 30px;
+    }
+}
+
+// podklad obsahu bez sloupce
+.gcm-main {
+    @extend .p-3;
+    @extend .p-md-6;
+    @extend .mb-sm-6;
+
+    border-radius: $border-radius;
+    background: $content-bg;
+}
+
+.gcm-content {
+    @extend .px-0;
+    @extend .px-sm-3;
+    @extend .col-md-8;
+    @extend .col-lg-9;
+
+    @if $columns-vertical-position == "left" {
+        @extend .order-md-1;
+    }
+
+    .homepage & {
+        @if $columns-vertical-homepage == false {
+            @extend .col-md-12;
+            @extend .col-lg-12;
+        }
+    }
+
+    // odlišná h2 na titulce
+    .homepage.body_multipage & h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+h1 {
+    .homepage & {
+        @include sr-only;
+    }
+}
+
+.tpl_mini_module {
+    .editor_mini,
+    .minievts,
+    .module_mini {
+        padding: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+}

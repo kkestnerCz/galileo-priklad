@@ -1,0 +1,627 @@
+$mp-events-item-name-text-decoration: $link-decoration !default;
+$mp-events-item-name-hover-text-decoration: $link-hover-decoration !default;
+$mp-events-item-name-hover-color: $link-hover-color !default;
+$mp-events-border-hover: 1px solid $link-hover-color !default;
+$mp-events-bg: $color-content-bg !default;
+$mp-events-bg-hover: $color-content-bg !default;
+$mp-events-card-bg: $color-form-bg !default;
+$mp-events-card-hover: $color-content-bg !default;
+$mp-events-item-date-font-weigt: $font-weight-normal !default;
+$mp-events-mb: 0.5rem !default;
+
+
+/* widgets */
+.multipage .feed_item {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        & > a > div > div:not(.fake-detail-link) {
+            width: 100%;
+        }
+    } //IE HACK
+    &:not(.pictureonleft):not(.pictureonright),
+    &.pictureonleft.no-picture,
+    &.pictureonright.no-picture {
+        a > .col {
+            @include prl-0; //odstraneni paddingu - srovnání nadpisu
+        }
+    }
+}
+
+.multipage {
+    .widget {
+        &.highlight {
+            table { color: $color-highlighting-text !important; }
+            tr { background-color: transparent !important; }
+        }
+    }
+    .uredni_deska {
+        .feed_item {
+            a {
+                text-decoration: none;
+                color: $color-text;
+
+                .item_name {
+                    @include link;
+                }
+
+                .item_date {
+                    font-weight: $mp-events-item-date-font-weigt;
+                    font-size: $mp-events-item-date-font-size;
+                    text-decoration: none;
+                    color: $color-date;
+                }
+
+                &:hover {
+                    .item_name {
+                        @include link-hover;
+                    }
+                }
+            }
+        }
+
+        &.highlight {
+            .feed_item {
+                .item_date {
+                    color: $color-highlighting-date;
+                }
+            }
+        }
+    }
+
+    .mixed {
+        .mp-mixer-row {
+            a {
+                text-decoration: none;
+                color: $color-text;
+
+                div {
+                    @extend .d-flex;
+
+                    p {
+                        margin-bottom: $spacer;
+                    }
+
+                    .item_name {
+                        @include link;
+                    }
+
+                    .item_date {
+                        @include item-date;
+                    }
+
+                    div {
+                        @extend .d-flex;
+                        @extend .flex-column;
+
+                        padding-right: $spacer * 3;
+                        padding-left: $spacer * 3;
+
+                        .item_type,
+                        .item_description {
+                            display: block;
+                            margin-bottom: 0;
+                        }
+
+                        .item_type {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .item_name {
+                        @include link-hover;
+                    }
+                }
+            }
+        }
+    }
+
+    .file_storage {
+        a {
+            .item_date,
+            .item_href {
+                display: none;
+            }
+
+            flex-flow: row wrap;
+            text-decoration: none;
+            color: $color-text-muted;
+
+            .item_name {
+                @include link;
+
+                flex: 1 100%;
+                vertical-align: middle;
+                word-wrap: break-word;
+            }
+
+            .icon {
+                color: $color-date;
+
+                &::before {
+                    @include gcm-fa-icon;
+                    @include icon-size;
+
+                    content: fa-content($fa-var-file);
+                }
+
+                &.pdf::before {
+                    content: fa-content($fa-var-file-pdf);
+                }
+
+                &.doc::before {
+                    content: fa-content($fa-var-file-word);
+                }
+
+                &.docx::before {
+                    content: fa-content($fa-var-file-word);
+                }
+
+                &.xlsx::before {
+                    content: fa-content($fa-var-file-excel);
+                }
+
+                &.jpg::before {
+                    content: fa-content($fa-var-file-image);
+                }
+
+                &.png::before {
+                    content: fa-content($fa-var-file-image);
+                }
+
+                &.zip::before {
+                    content: fa-content($fa-var-file-archive);
+                }
+
+                &.xml::before {
+                    content: fa-content($fa-var-file-code);
+                }
+
+                &.csv::before {
+                    content: fa-content($fa-var-file-csv);
+                }
+            }
+
+            .file_info {
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+
+            .item_description,
+            .file-details,
+            .item_href {
+                margin-bottom: 0;
+                vertical-align: middle;
+                color: $color-text;
+            }
+
+            &:hover {
+                .item_name {
+                    @include link-hover;
+                }
+            }
+        }
+    }
+    $mp-calendar-th-color: $mp-calendar-heading-color !default;
+
+    .mini-kalendar {
+        .calendar-mp {
+            text-align: center;
+
+            @include calendar;
+        }
+    }
+
+    .mini-svatek {
+        .content {
+            color: $mp-content-color;
+
+            .svatek {
+                font-size: $mp-names-font-size;
+                border: $mp-names-border;
+                border-radius: $border-radius;
+
+                .date-wrapper,
+                .jmeno,
+                .statni_sv {
+                    font-weight: $mp-names-font-weight;
+                }
+
+                &.mini-width-2 {
+                    padding: $mp-names-padding;
+                }
+
+                &.mini-width-4 {
+                    display: flex;
+
+                    @media (max-width: 500px) {
+                        flex-direction: column;
+                    }
+
+                    .names-today,
+                    .holiday-today,
+                    .names-tomorrow {
+                        padding: $mp-names-padding;
+                    }
+
+                    .holiday-today,
+                    .names-tomorrow {
+                        border-left: $mp-names-border;
+                    }
+                }
+
+                &.mini-width-6 {
+                    display: flex;
+
+                    @media (max-width: 500px) {
+                        flex-direction: column;
+                    }
+
+                    .names-today,
+                    .holiday-today,
+                    .names-tomorrow {
+                        padding: $mp-names-padding;
+                    }
+
+                    .holiday-today,
+                    .names-tomorrow {
+                        border-left: $mp-names-border;
+                    }
+                }
+            }
+        }
+    }
+
+    /* sunrise - sunset */
+
+    .mini-vychod_zapad {
+        .content {
+            border: $mp-sunrise-sunset-border;
+            border-radius: $border-radius;
+
+            .sunrise-sunset {
+                .sunrise-svg {
+                    @extend .d-flex;
+
+                    min-height: 75px;
+                    background-image: url("images/pocasi/vychod_col.svg");
+                    background-position: center center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                .time {
+                    span {
+                        font-weight: 700;
+                    }
+                }
+
+                &.mini-width-4 {
+                    .time {
+                        font-size: $mp-sunrise-sunset-font-size;
+                    }
+                }
+
+                &.mini-width-3 {
+                    .time {
+                        font-size: $mp-sunrise-sunset-font-size;
+                    }
+                }
+
+                &.mini-width-2 {
+                    .time {
+                        font-size: $mp-sunrise-sunset-font-size;
+                    }
+
+                    .col-3.sunrise-svg {
+                        @include make-col(4);
+                    }
+
+                    .col-6.time.sunrise,
+                    .col-6.time.sunset {
+                        @include make-col(12);
+                    }
+                }
+            }
+        }
+    }
+
+    /* zpravy */
+    .evts,
+    .evts_galerie,
+    .evts_akce {
+        .feed_item.pictureontop {
+            margin-bottom: 0;
+        }
+        .feed_item.pictureonright:not(.no-picture) a .picture {
+            padding-left: $spacer * 3 !important;
+        }
+
+        .feed_item:not(.pictureontop),
+        .card {
+            border: $mp-events-border;
+            border-radius: $mp-events-border-radius;
+
+            a {
+                text-decoration: none;
+            }
+
+            .item_date {
+                margin-bottom: $mp-events-mb;
+                font-weight: $mp-events-item-date-font-weigt;
+                font-size: $mp-events-item-date-font-size;
+                text-decoration: none;
+                color: $mp-events-item-date-color;
+
+                &::before {
+                    @include gcm-fa-icon;
+
+                    content: fa-content($mp-events-item-date-before-content);
+                    margin-right: $mp-events-item-date-before-font-mr;
+                    color: $mp-events-item-date-before-font-color;
+                }
+            }
+
+            .item_name {
+                text-decoration: $mp-events-item-name-text-decoration;
+                color: $mp-events-item-name-color;
+            }
+
+            .item_description {
+                color: $mp-events-item-description-color;
+            }
+
+            &:hover {
+                border: $mp-events-border-hover;
+                background: $mp-events-bg-hover;
+
+                .item_name {
+                    text-decoration: $mp-events-item-name-hover-text-decoration;
+                    color: $mp-events-item-name-hover-color;
+                }
+            }
+
+            &.pictureonleft .img-fluid {
+                border-radius:
+                    $mp-events-border-radius 0 0
+                    $mp-events-border-radius;
+            }
+
+            &.pictureonright .img-fluid {
+                border-radius:
+                    0 $mp-events-border-radius
+                    $mp-events-border-radius 0;
+            }
+
+            .picture-top + .card-body .item_description {
+                display: none;
+            }
+
+            &.no-picture {
+                @extend .px-3;
+
+                &.pictureontop .item_name {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .card {
+            text-decoration: none;
+        }
+
+        &.highlight {
+            @include mrl--3;
+
+            background: transparent;
+
+            .feed_item,
+            .feed_item:hover,
+            .pictureontop {
+                border-color: $color-highlighting-bg;
+                background: $color-highlighting-bg;
+                background: transparent;
+
+                h2,
+                h3,
+                h4,
+                h5 {
+                    color: $color-highlighting-heading;
+                    border-radius: $border-radius;
+                }
+
+                a {
+                    color: $color-highlighting-link;
+
+                    h2,
+                    h3,
+                    h4,
+                    h5 {
+                        color: $color-highlighting-link;
+                    }
+
+                    &:hover {
+                        h2,
+                        h3,
+                        h4,
+                        h5 {
+                            color: $color-hover;
+                        }
+                    }
+                }
+
+                .item_date {
+                    color: $color-highlighting-date;
+                }
+
+                .item_description {
+                    color: $color-highlighting-text;
+
+                }
+
+                .card {
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+
+    /* Pocasi */
+    .mini-pocasi {
+        .content {
+            border: $mp-weather-border;
+            border-radius: $border-radius;
+
+            .weather {
+                .day {
+                    margin-bottom: $mp-events-mb;
+                    text-align: center;
+                    border-right: $mp-weather-border;
+
+                    &:nth-of-type(4) {
+                        border-right: none;
+                    }
+                }
+                .date {
+                    font-weight: 700;
+                    color: $mp-weather-color;
+                }
+
+                .icon-svg {
+                    @extend .ml-0;
+                    @extend .pr-3;
+                }
+
+                .pl-0 {
+                    @extend .pl-3;
+                }
+
+                .temp-max,
+                .temp-min {
+                    font-weight: 700;
+                    font-size: $mp-weather-max-font-size;
+                    text-align: left;
+                    color: $mp-weather-color;
+                }
+
+                .temp-min {
+                    font-weight: 400;
+                    font-size: $mp-weather-font-size;
+                }
+
+                .description,
+                .wind,
+                .pressure,
+                .humidity,
+                .rain,
+                .snow {
+                    font-size: $mp-weather-description-font-size;
+                    color: $mp-weather-color;
+                }
+
+                &.mini-width-4,
+                &.mini-width-3 {
+                    .day {
+                        @include make-col(6);
+
+                        @include media-breakpoint-up(md) {
+                           @include make-col(4);
+                        }
+
+                        .temp-max {
+                            font-size: 0.85 * ($mp-weather-max-font-size);
+                        }
+                    }
+
+                    .day:last-of-type {
+                        display: none;
+                    }
+
+                    .day:nth-of-type(3) {
+                        border-right: none;
+
+                        @include make-col(12);
+
+                        @include media-breakpoint-up(md) {
+                            @include make-col(4);
+                        }
+                    }
+                }
+
+                &.mini-width-2 {
+                    .day {
+                        @include make-col(12);
+
+                        border-right: none;
+                    }
+
+                    .day:nth-of-type(2),
+                    .day:nth-of-type(3),
+                    .day:nth-of-type(4) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.highlight {
+            .date {
+                color: $color-highlighting-heading !important;
+            }
+
+            .temp-max,
+            .temp-min,
+            .description,
+            .wind,
+            .pressure,
+            .humidity,
+            .rain,
+            .snow {
+                color: $color-highlighting-text !important;
+            }
+        }
+    }
+
+    .feed_item .item_name {
+        @include mp-item_name-size;
+    }
+
+    .feed_item {
+        margin-bottom: $mp-widget-mb!important;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.multipage {
+    .feed_item.pictureonright {
+        .picture {
+            @include media-breakpoint-down(xs) {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body:not(.homepage) {
+        @include calendar-actions-mini();
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .owm:first-of-type,
+    .owm:nth-of-type(2) {
+        border-bottom: $mp-weather-border;
+    }
+
+    .feed_item.col-4:last-of-type {
+        display: flex !important;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    @include calendar-actions-mini();
+}

@@ -1,0 +1,35 @@
+.fso_filters {
+    @include form;
+
+    .fso_filter {
+        margin-bottom: 1rem;
+    }
+
+    .modal-header {
+        display: none;
+    }
+
+    .form {
+        margin-top: $spacer * 3;
+    }
+
+    .modal.fso_filter_advanced:not(.show) { @include sr-only; }
+}
+
+.fso-table {
+    .price {
+        min-width: 115px;
+    }
+}
+
+[id="fso_filter_advanced_form"] {
+    .input-group,
+    .fso_filter_item {
+        margin-bottom: 1rem;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+}

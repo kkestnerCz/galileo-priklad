@@ -1,0 +1,38 @@
+$submenu-wide-height-offset: 60px !default;
+
+.gcm-menu-wrapper nav {
+    @extend .position-relative;
+
+    .subitems {
+        @extend .position-static;
+
+        .nav {
+            @include make-row;
+            @include mrl-0;
+
+            @extend .d-none;
+
+            top: $submenu-wide-height-offset !important;
+            min-width: 100%;
+
+            .nav-item {
+                @include make-col(4);
+
+                &.subitems:hover .nav {
+                    display: none !important;
+                }
+            }
+        }
+
+        &:hover > ul {
+            display: flex !important;
+        }
+
+        &:focus-within > ul {
+            /* kvuli MS EDGE musi byt rozdeleno, jinak nefunguje rozbaleni menu */
+            display: flex !important;
+        }
+
+        //@extend .position-static;
+    }
+}

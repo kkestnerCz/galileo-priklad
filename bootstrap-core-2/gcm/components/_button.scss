@@ -1,0 +1,16 @@
+.btn-primary {
+    @include button-primary;
+}
+
+.btn-outline-primary {
+    color: $btn-bg;
+    border: 1px solid $btn-bg;
+
+    &:hover,
+    &:not(:disabled):not(.disabled).active {
+        text-decoration: $btn-hover-text-decoration;
+        color: $btn-hover-color;
+        border: 1px solid $btn-hover-border;
+        background: $btn-hover-bg;
+    }
+}
