@@ -50,26 +50,26 @@ $mp-events-bg-hover: $color-content-bg;
 
 //calendar
 $mp-calendar-heading-bg: $color-highlighting-bg;
-$mp-calendar-heading-color: $color-highlighting-heading;
-$mp-calendar-table-border: 1px solid $color-border;
-$mp-calendar-table-th-bg: $color-link;
+$mp-calendar-heading-color: #fff;
+$mp-calendar-table-border: 1px solid #DAE6F2;
+$mp-calendar-table-th-bg: #004380;
 $mp-calendar-th-color: $mp-calendar-heading-color;
 $mp-calendar-table-th-font-weight: $font-weight-normal;
 $mp-calendar-table-td-font-weight: $font-weight-normal;
-$mp-calendar-table-body-bg: #eceeef;
+$mp-calendar-table-body-bg: #DAE6F2;
 $mp-calendar-table-body-color: $color-text;
 $mp-calendar-month-bg: $mp-calendar-heading-color;
 $mp-calendar-month-color: #516164;
-$mp-calendar-today-bg: $color-hover;
+$mp-calendar-today-bg: #007AF2;
 $mp-calendar-today-color: $mp-calendar-heading-color;
 $mp-calendar-action-bg: $mp-calendar-heading-color;
 $mp-calendar-action-color: $color-link;
-$mp-calendar-action-border: 1px solid $color-link;
+$mp-calendar-action-border: 1px solid transparent;
 $mp-calendar-td-height: 35px;
 $mp-calendar-action-popover-color: $color-link;
 $mp-calendar-today-action-count-bg: $mp-calendar-today-color;
 $mp-calendar-today-action-count-color: $mp-calendar-today-bg;
-$mp-calendar-action-count-bg: $mp-calendar-action-color;
+$mp-calendar-action-count-bg: #fff;
 $mp-calendar-action-count-color: $mp-calendar-action-bg;
 
 //names

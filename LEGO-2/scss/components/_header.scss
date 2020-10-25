@@ -1,4 +1,4 @@
-$header-bg: #fff !default;
+$header-bg: linear-gradient( 90deg, #fff, #fff 25%, #EBF1F7 25%, #EBF1F7 100%) !default;
 
 .gcm-header {
     @extend .d-none;
@@ -8,6 +8,12 @@ $header-bg: #fff !default;
     @extend .px-3;
 
     background: $header-bg;
+
+    border-top: 5px solid transparent;
+    -moz-border-image: -moz-linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    -webkit-border-image: -webkit-linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    border-image: linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    border-image-slice: 1;
 }
 
 .gcm-header__container {
@@ -24,6 +30,10 @@ $header-bg: #fff !default;
 
 .gcm-header__right {
     @extend .align-self-center;
+    @extend .d-flex;
+
+    align-items: center;
+    justify-content: space-between;
 
     @include make-col(4);
 }

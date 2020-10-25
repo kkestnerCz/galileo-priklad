@@ -10,21 +10,21 @@ $default-margin: 30px;
 
 /* main colors */
 $color-text: #4d4d4d;
-$color-heading: #000;
-$color-link: #f05;
+$color-heading: #0056A3;
+$color-link: #007AF2;
 $color-hover: #7700b3;
-$color-date: #f00;
+$color-date: #004380;
 $color-text-muted: #808080;
 $color-form-bg: #f2f2f2;
-$color-border: #ccc;
+$color-border: #E3ECF5;
 $color-content-bg: #fff;
-$color-body-bg: #d9d9d9;
+$color-body-bg: #fff;
 
-$color-highlighting-bg: #333;
+$color-highlighting-bg: linear-gradient(to right, #00417D, #002445);
 $color-highlighting-text: #fff;
-$color-highlighting-heading: #fff;
-$color-highlighting-link: #f05;
-$color-highlighting-date: #00c2ff;
+$color-highlighting-heading: #FBBB0E;
+$color-highlighting-link: #ebf1f7;
+$color-highlighting-date: #FFFFFF;
 
 /* fonts */
 $font-family-base: "Roboto", sans-serif;
@@ -84,10 +84,10 @@ $list-before-color: $link-color;
 $list-font-size: $font-size-base;
 
 /* button */
-$btn-bg: #d500ff;
+$btn-bg: #0F5499;
 $btn-color: #fff;
 $btn-border: $btn-bg;
-$btn-hover-bg: #1e00b3;
+$btn-hover-bg: #FBBB0E;
 $btn-hover-color: $btn-color;
 $btn-hover-border: $btn-hover-bg;
 
@@ -96,12 +96,12 @@ $header-title-family: $font-family-base;
 $header-title-weight: $font-weight-bold;
 
 /* mmenu */
-$mmenu-bg: #333;
+$mmenu-bg: #004380;
 $mmenu-color: #fff;
 $hamburger-layer-color: $mmenu-color;
 
 /* columns */
-$columns-bg: #eceeef !default;
+$columns-bg: #fff !default;
 $columns-border: none; //1px solid $color-border!default;
 $columns-border-radius: $border-radius !default;
 $columns-mb: 30px !default;
@@ -110,7 +110,7 @@ $columns-vertical-homepage: false; // true/false vertikální sloupec na homepag
 $columns-horizontal-bg: #fff;
 $columns-horizontal-equal: true; // true/false stejná výška horizontálních sloupců
 
-$columns-h3-color: #000 !default;
+$columns-h3-color: #FBBB0E !default;
 $columns-h3-size: 1.125rem !default;
 $columns-h3-family: inherit !default;
 $columns-h3-weight: bold !default;
@@ -147,26 +147,26 @@ $breadcrumb-a-text-decoration: underline;
 $breadcrumb-home-font-weight: 400;
 
 /* headerfooter */
-$headerfooter-bg: #000;
-$headerfooter-color: #fff;
+$headerfooter-bg: url('images/hf-bg.png') no-repeat bottom center / cover, #6DB3F2;;
+$headerfooter-color: #4D4D4D;
 $headerfooter-a-color-hover: $headerfooter-color;
-$headerfooter-title-color: $headerfooter-color;
+$headerfooter-title-color: #0056A3;
 $headerfooter-title-font-size: 1.5em;
 $headerfooter-title-font-weight: $font-weight-bold;
 $headerfooter-title-font-ml: 0;
 $headerfooter-title-mb: 0.5rem;
 $headerfooter-title-text-decoration: none;
-$headerfooter-box: 25%;
+$headerfooter-box: 25%; // v zadani jsou 3 sloupce -> tzn 33% (nechávám po 4, protože data ze systému jsou ve 4 boxech)
 
 $headerfooter-list-style: none;
-$headerfooter-a-color: $headerfooter-color;
+$headerfooter-a-color: #007AF2;
 $headerfooter-a-line-height: 2;
 $headerfooter-a-before-contetnt: $fa-var-angle-right;
 $headerfooter-a-before-mr: 10px;
 $headerfooter-a-before-top: 10px;
 
 /* footer */
-$footer-bg: #333;
+$footer-bg: #004380;
 $footer-color: #fff;
 $footer-logo-color: $footer-color;
 $footer-a-color: $footer-color;

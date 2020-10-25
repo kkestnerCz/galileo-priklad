@@ -10,25 +10,29 @@ $header-title-pre-weight: $font-weight-normal !default;
 
 .gcm-crest {
     @extend .d-flex;
-    @extend .align-items-end;
+    @extend .align-items-center;
 
     text-decoration: none;
+    justify-content: space-between;
 }
 
 .gcm-crest__img {
     @extend .img-fluid;
 
-    width: 70px;
+    width: 179px;
     height: auto;
 }
 
 .gcm-crest__title {
+    /*
     @extend .ml-3;
 
     font-weight: $header-title-weight;
     font-size: $header-title-size;
     font-family: $header-title-family;
     color: $header-title-color;
+    */
+    display: none;
 }
 
 .gcm-crest__title--pre {
@@ -38,4 +42,26 @@ $header-title-pre-weight: $font-weight-normal !default;
     font-size: $header-title-pre-size;
     font-family: $header-title-pre-family;
     color: $header-title-pre-color;
+}
+
+.qcm-crest__qlinks {
+    margin-right: 25%;
+    color: #0056A3;
+
+    &::before {
+        @include gcm-fa-icon;
+        padding: 20px 15px 15px 15px;
+
+
+        content: fa-content($fa-var-envelope);
+        position: relative;
+        bottom: $columns-h3-before-bottom;
+        //margin-right: $columns-h3-before-mr;
+        font-size: $h2-font-size;
+        
+    }
+    &:hover {
+        background: #0F5499;
+        color: #FBBB0E;
+    }
 }

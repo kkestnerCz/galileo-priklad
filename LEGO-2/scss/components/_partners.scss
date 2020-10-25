@@ -1,0 +1,113 @@
+
+.gcm-partners {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    @extend .row;
+
+    text-decoration: none;
+
+    background: #EBF1F7;
+    border-top: 5px solid transparent;
+    -moz-border-image: -moz-linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    -webkit-border-image: -webkit-linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    border-image: linear-gradient(90deg, #0056a3 25%, #fbbb0e 25%, #fbbb0e 50%, #b10b22 50%, #b10b22 75%, #1ba300 75%, #1ba300 100%);
+    border-image-slice: 1;
+    min-height: 200px;
+
+    /*
+    a {
+        text-decoration: none;
+        color: $color-link;
+
+        &:hover {
+            color: $color-hover;
+        }
+    }
+    */
+}
+
+.gcm-partners__title {
+    @extend .ml-3;
+    @extend .col-sm-12;
+    @extend .col-md-3;
+    @extend .text-center;
+
+    font-weight: $headerfooter-title-font-weight;
+    font-size: $headerfooter-title-font-size;
+    font-family: $header-title-family;
+    color: $headerfooter-title-color;
+
+}
+
+.gcm-partners__item {
+    //@extend .ml-3;
+    @extend .col-sm-1;
+    @extend .col-md-2;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .text-center;
+
+    min-width: fit-content;
+
+}
+
+.gcm-partners-item__img {
+    @extend .pb-2;
+}
+
+.gcm-partners-item__link {
+    font-weight: $headerfooter-title-font-weight;
+    //font-size: $headerfooter-title-font-size;
+    font-family: $header-title-family;
+    color: $headerfooter-title-color;
+
+    text-decoration: none;
+}
+
+
+/*
+.gcm-infobar__container {
+    //background: initial;
+}
+
+.gcm-infobar__row {
+    //background: initial;
+}
+
+.gcm-infobar__left {
+    @extend .d-flex;
+
+    @include make-col(8);
+}
+
+.gcm-infobar__right {
+    @extend .d-flex;
+    @extend .justify-content-end;
+    @extend .align-items-center;
+
+    @include make-col(4);
+}
+
+.gcm-infobar__ico {
+    @extend .mr-5;
+
+    &:last-child {
+        @extend .mr-0;
+    }
+}
+
+.sr-only-m {
+    @include media-breakpoint-down(sm) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+*/

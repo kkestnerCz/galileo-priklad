@@ -1,4 +1,6 @@
 .gcm-infobar {
+    display: none;
+    /*
     @extend .d-none;
     @extend .d-sm-block;
     @extend .d-print-none;
@@ -59,4 +61,5 @@
         white-space: nowrap;
         border: 0;
     }
+    */
 }

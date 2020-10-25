@@ -1,0 +1,142 @@
+
+.fixed-icons {
+
+    position: fixed;
+    top: 200px;
+    right: 0;
+    z-index: 3000;  // zjistit, použít menší
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fixed-icons-item__title {
+    display: none;
+    color:#003566;
+
+    white-space: nowrap;
+}
+
+.fixed-icons-item__icon {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+ }
+
+.fixed-icons--item {
+    @extend .mt-2;
+
+    width: 65px;
+    height: 65px;
+    //background: blue;
+    background: $color-highlighting-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //align-content: space-between;
+    transition: width 2s;
+
+    
+
+    
+    font-weight: $headerfooter-title-font-weight;
+    font-size: $headerfooter-title-font-size;
+    font-family: $header-title-family;
+    
+
+    &:hover {
+        -webkit-transition: width 1s ease-in-out;
+        -moz-transition: width 1s ease-in-out;
+        -o-transition: width 1s ease-in-out;
+        transition: width 1s ease-in-out;
+    
+        
+        color: $headerfooter-title-color;
+        background: $menu-bg-hover;
+        width: 250px;
+        justify-content: end;
+        
+
+        .fixed-icons-item__title {
+            display: inherit;
+        }
+
+        .fixed-icons-item__icon {
+            filter: invert(25%) sepia(0%) saturate(100%) hue-rotate(150deg) brightness(40%) contrast(100%);
+        }
+    }
+
+}
+
+.gcm-partners__item {
+    //@extend .ml-3;
+    @extend .col-sm-1;
+    @extend .col-md-2;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .text-center;
+
+    min-width: fit-content;
+
+}
+
+.gcm-partners-item__img {
+    @extend .pb-2;
+}
+
+.gcm-partners-item__link {
+    font-weight: $headerfooter-title-font-weight;
+    //font-size: $headerfooter-title-font-size;
+    font-family: $header-title-family;
+    color: $headerfooter-title-color;
+
+    text-decoration: none;
+}
+
+
+/*
+.gcm-infobar__container {
+    //background: initial;
+}
+
+.gcm-infobar__row {
+    //background: initial;
+}
+
+.gcm-infobar__left {
+    @extend .d-flex;
+
+    @include make-col(8);
+}
+
+.gcm-infobar__right {
+    @extend .d-flex;
+    @extend .justify-content-end;
+    @extend .align-items-center;
+
+    @include make-col(4);
+}
+
+.gcm-infobar__ico {
+    @extend .mr-5;
+
+    &:last-child {
+        @extend .mr-0;
+    }
+}
+
+.sr-only-m {
+    @include media-breakpoint-down(sm) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+*/

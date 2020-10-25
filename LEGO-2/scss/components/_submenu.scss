@@ -4,7 +4,7 @@ $submenu-h3-color: $columns-h3-color !default;
 $submenu-h3-ml: 0 !default;
 $submenu-h3-text-transform: $columns-h3-text-transform;
 
-$submenu-bg: #333 !default;
+$submenu-bg: #002F58 !default;
 $submenu-color: #fff !default;
 $submenu-font-size: $font-size-base;
 $submenu-font-weight: $font-weight-normal !default;
@@ -12,11 +12,11 @@ $submenu-text-decoration: none !default;
 $submenu-border-bottom: none !default;
 $submenu-text-transform: none !default;
 
-$submenu-hover-bg: $color-link;
+$submenu-hover-bg: #FBBB0E;
 $submenu-hover-color: $submenu-color;
 $submenu-hover-text-decoration: none;
 
-$submenu-sub-bg: #000 !default;
+$submenu-sub-bg: #0056A3 !default;
 $submenu-sub-color: $submenu-color !default;
 $submenu-sub-font-weight: $font-weight-normal !default;
 
@@ -34,7 +34,7 @@ $submenu-sub-after-top: 3px !default;
     text-transform: $submenu-h3-text-transform;
     color: $submenu-h3-color;
     border: $columns-border;
-    background: $submenu-h3-bg;
+    background: url("images/icon.png") no-repeat right 15px bottom, linear-gradient(to right, #00427F, #002341);
 
     .homepage & {
         @extend .d-none;

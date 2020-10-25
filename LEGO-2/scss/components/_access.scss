@@ -9,7 +9,7 @@
     color: $columns-h3-color;
     border-bottom: $columns-h3-border;
     border-radius: $columns-border-radius $columns-border-radius 0 0;
-    background: $columns-h3-bg;
+    background: url("images/icon.png") no-repeat right 15px bottom, linear-gradient(to right, #00427F, #002341);
 
     &::before {
         @include gcm-fa-icon;

@@ -5,9 +5,9 @@ $menu-font-weight: 400;
 $menu-text-decoration: none !default;
 
 $menu-border: 1px solid black !default;
-$menu-bg: #333;
+$menu-bg: #004380;
 $menu-border-radius: $border-radius !default;
-$menu-bg-hover: #666 !default;
+$menu-bg-hover: #FBBB0E !default;
 
 $menu-hover-color: #fff;
 $menu-hover-before-color: $menu-hover-color !default;
@@ -19,28 +19,28 @@ $menu-before-color: $menu-hover-color;
 $menu-before-size: 0.75em !default;
 $menu-before-bottom: 1px !default;
 
-$menu-after-fa-icon: $fa-var-angle-down !default;
+$menu-after-fa-icon: "" !default;
 $menu-after-ml: 1rem !default;
 $menu-after-color: "";
 $menu-after-size: 0.75em !default;
 $menu-after-bottom: 1px !default;
 
 $menu-sub-font-size: 1rem !default;
-$menu-sub-bg: #666 !default;
+$menu-sub-bg: #003566 !default;
 $menu-sub-border-radius: $menu-border-radius !default;
-$menu-sub-hover-bg: $color-link !default;
+$menu-sub-hover-bg: #FBBB0E !default;
 $menu-sub-color: $menu-hover-color;
 $menu-sub-hover-color: $menu-hover-color;
 $menu-sub-hover-before-color: $menu-sub-hover-color !default;
 
-$menu-sub-before-fa-icon: "";
+$menu-sub-before-fa-icon: "";
 $menu-sub-before-mr: $spacer * 2 !default;
 $menu-sub-before-color: $menu-sub-color;
 $menu-sub-before-size: 1rem !default;
 $menu-sub-before-top: 6px !default;
 
 //pro siroke submenu
-//$submenu-wide-height-offset: 60px !default;
+$submenu-wide-height-offset: 58px !default;
 
 .gcm-menu-wrapper {
     @extend .d-print-none;
@@ -142,6 +142,10 @@ $menu-sub-before-top: 6px !default;
             color: $menu-after-color;
         }
 
+        .nav {
+            padding: 10px;
+        }
+
         ul {
             display: none;
             padding: 0;
@@ -153,6 +157,8 @@ $menu-sub-before-top: 6px !default;
 
             .item {
                 @extend .dropdown-item;
+                background: #0056A3;
+                border: 2px solid $menu-sub-bg;
 
                 min-width: 250px;
                 padding: 0;

@@ -15,23 +15,24 @@ $mheader-title-family: $header-title-family;
     @extend .py-4;
 
     min-width: 90px;
-    background: $mheader-bg;
+    background: #fff;
 }
 
 .gcm-mobile-crest {
     @extend .d-flex;
+    justify-content: center;
 
     align-items: center;
     text-decoration: none !important;
 }
 
 .gcm-mobile-crest__img {
-    width: 50px;
+    width: 179px;
     height: auto;
 }
 
 .gcm-mobile-crest__title {
-    @extend .d-inline;
+    @extend .d-none;
     @extend .ml-3;
 
     font-weight: $mheader-title-weight;

@@ -7,8 +7,18 @@
 
     z-index: 1001;
     display: inline;
-    padding: 15px;
-    background: transparent;
+    padding: 4px;
+    background: #FFF;
+
+    &.language--mob {
+        background: transparent;
+    }
+
+    a {
+        text-decoration: none;
+        color: #4D4D4D;
+    }
+   
 
     ul {
         min-width: 1rem;
